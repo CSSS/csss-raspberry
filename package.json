@@ -1,0 +1,61 @@
+{
+  "name": "mdb-react-components",
+  "version": "0.1.0",
+  "license": "AGPL-3.0-or-later",
+  "author": "Micah Baker <mdb15@sfu.ca> (https://micahdb.com)",
+  "private": true,
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.23.4",
+    "@babel/core": "^7.23.5",
+    "@babel/preset-env": "^7.23.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "lint": "eslint src",
+    "build": "rm -Rf dist && NODE_ENV=production babel src/components --out-dir dist --copy-files"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ],
+    "rules": {
+      "indent": [
+        "error",
+        2
+      ],
+      "semi": [
+        "error",
+        "always"
+      ]
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "eslint": "^8.54.0"
+  }
+}
