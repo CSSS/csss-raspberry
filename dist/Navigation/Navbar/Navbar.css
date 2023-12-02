@@ -16,32 +16,85 @@
 	transform: translateX(-50%);
 	width: min(100vw - 2*var(--mdb-small-padding), var(--mdb-max-page-width));
 	height: var(--mdb-navigation-navbar-height);
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+	align-content: center;
 }
 
 .mdb-navigation-navbar > .container > .leading,
-.mdb-navigation-navbar > .container > .center,
 .mdb-navigation-navbar > .container > .trailing {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: center;
+}
+
+.mdb-navigation-navbar > .container > .children {
+	flex-grow: 1;
+}
+
+.mdb-navigation-navbar > .container > .children.center {
 	position: absolute;
 	top: 50%;
-	transform: translateY(-50%);
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: center;
-	justify-items: center;
-	align-content: center;
-	align-items: center;
-}
-
-.mdb-navigation-navbar > .container > .leading {
-	left: 0;
-}
-
-.mdb-navigation-navbar > .container > .center {
 	left: 50%;
 	transform: translate(-50%, -50%);
+	flex-grow: 0;
 }
 
-.mdb-navigation-navbar > .container > .trailing {
-	right: 0;
+/* the revealer (hamburger menu, dropdown, etc.) should
+ * only be displayed if the media query is satisfied */
+.mdb-navigation-navbar > .container > .children > .revealer {
+	display: none;
+}
+
+.mdb-navigation-navbar > .container > .children > .container {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: center;
+}
+
+.mdb-navigation-navbar > .container > .children.right > .container {
+	justify-content: flex-end;
+}
+
+@media only screen and (max-width: 768px) {
+	.mdb-navigation-navbar > .container > .trailing {
+		display: none; /* temp */
+	}
+
+	.mdb-navigation-navbar > .container > .children,
+	.mdb-navigation-navbar > .container > .children.center {
+		position: relative;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		transform: none;
+		flex-grow: 0;
+	}
+
+	.mdb-navigation-navbar > .container > .children > .revealer {
+		display: block;
+	}
+
+	.mdb-navigation-navbar > .container > .children > .container {
+		visibility: hidden;
+		position: absolute;
+		top: 100%;
+		right: 0;
+		flex-flow: column nowrap;
+		width: fit-content;
+		height: fit-content;
+		border: 1px solid var(--mdb-border-color);
+		background-color: var(--mdb-background-color);
+	}
+
+	.mdb-navigation-navbar > .container > .children:hover > .container {
+		visibility: visible;
+	}
 }

@@ -20,31 +20,9 @@ function Navbar(props) {
     align,
     leading,
     trailing,
+    revealer,
     children
   } = props;
-  if (align === 'left') {
-    return /*#__PURE__*/_react.default.createElement("div", {
-      className: "mdb-navigation-navbar"
-    }, /*#__PURE__*/_react.default.createElement("div", {
-      className: "container"
-    }, /*#__PURE__*/_react.default.createElement("div", {
-      className: "leading"
-    }, leading, children), /*#__PURE__*/_react.default.createElement("div", {
-      className: "trailing"
-    }, trailing)));
-  } else if (align === 'right') {
-    return /*#__PURE__*/_react.default.createElement("div", {
-      className: "mdb-navigation-navbar"
-    }, /*#__PURE__*/_react.default.createElement("div", {
-      className: "container"
-    }, /*#__PURE__*/_react.default.createElement("div", {
-      className: "leading"
-    }, leading), /*#__PURE__*/_react.default.createElement("div", {
-      className: "trailing"
-    }, children, trailing)));
-  }
-
-  // align === 'center', or other
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "mdb-navigation-navbar"
   }, /*#__PURE__*/_react.default.createElement("div", {
@@ -52,8 +30,12 @@ function Navbar(props) {
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "leading"
   }, leading), /*#__PURE__*/_react.default.createElement("div", {
-    className: "center"
-  }, children), /*#__PURE__*/_react.default.createElement("div", {
+    className: `children ${align}`
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "revealer"
+  }, revealer || 'MENU'), /*#__PURE__*/_react.default.createElement("div", {
+    className: "container"
+  }, children)), /*#__PURE__*/_react.default.createElement("div", {
     className: "trailing"
   }, trailing)));
 }
