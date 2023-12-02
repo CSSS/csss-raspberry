@@ -1,0 +1,47 @@
+.mdb-navigation-navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: var(--mdb-navigation-navbar-height);
+	border-bottom: 1px solid var(--mdb-border-color);
+	background-color: var(--mdb-background-color);
+	color: var(--mdb-color);
+}
+
+.mdb-navigation-navbar > .container {
+	position: relative;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: min(100vw - 2*var(--mdb-small-padding), var(--mdb-max-page-width));
+	height: var(--mdb-navigation-navbar-height);
+}
+
+.mdb-navigation-navbar > .container > .leading,
+.mdb-navigation-navbar > .container > .center,
+.mdb-navigation-navbar > .container > .trailing {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	justify-items: center;
+	align-content: center;
+	align-items: center;
+}
+
+.mdb-navigation-navbar > .container > .leading {
+	left: 0;
+}
+
+.mdb-navigation-navbar > .container > .center {
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.mdb-navigation-navbar > .container > .trailing {
+	right: 0;
+}

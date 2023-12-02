@@ -13,7 +13,9 @@
   "devDependencies": {
     "@babel/cli": "^7.23.4",
     "@babel/core": "^7.23.5",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/preset-env": "^7.23.5",
+    "mdb-react-components": "./dist",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1"
@@ -23,8 +25,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "lint": "eslint src",
-    "build": "rm -Rf dist && NODE_ENV=production babel src/components --out-dir dist --copy-files"
+    "lint": "eslint src && eslint lib",
+    "build": "rm -Rf dist && NODE_ENV=production babel lib --out-dir dist --copy-files"
   },
   "eslintConfig": {
     "extends": [

@@ -1,0 +1,21 @@
+/* webfonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap'); 
+
+/* CSS variables (these can be overwritten) */
+:root {
+	/* general */
+	--mdb-border-color: #808080;
+	--mdb-background-color: #fefefe;
+	--mdb-color: #080808;
+	--mdb-max-page-width: 1024px;
+	--mdb-small-padding: 8px;
+	--mdb-font-family-sans-serif: 'Inter';
+
+	/* Navigation/Navbar */
+	--mdb-navigation-navbar-height: 64px;
+}
+
+/* set some defaults */
+body {
+	font-family: var(--mdb-font-family-sans-serif), sans-serif;
+}
