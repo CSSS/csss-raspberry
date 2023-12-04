@@ -1,0 +1,47 @@
+.mdb-dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.mdb-dropdown svg.rotate {
+	transform: rotate(180deg);
+}
+
+.mdb-dropdown.nav svg {
+	width: 20px;
+	height: 20px;
+}
+
+.mdb-dropdown > .container {
+	z-index: 99;
+	position: absolute;
+	top: 100%;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: flex-start;
+	align-content: flex-start;
+	border-radius: 16px;
+	border: 1px solid var(--mdb-border-color);
+	padding: 6px;
+	background-color: var(--mdb-background-color);
+}
+
+.mdb-dropdown > .container.left {
+	left: 0;
+}
+
+.mdb-dropdown > .container.center {
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.mdb-dropdown > .container.right {
+	right: 0;
+}
+
+.mdb-dropdown > .container > p {
+	margin: 4px;
+	font-size: 10pt;
+	white-space: nowrap;
+}

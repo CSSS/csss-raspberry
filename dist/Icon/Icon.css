@@ -1,0 +1,14 @@
+.mdb-icon {
+	display: inline-block;
+	width: 16px;
+	width: 16px;
+	enable-background: new 0 0 32 32;
+}
+
+.mdb-icon > polyline,
+.mdb-icon > line {
+	fill: none;
+	stroke: var(--mdb-icon-stroke);
+	stroke-width: var(--mdb-icon-stroke-width);
+	stroke-linecap: square;
+}

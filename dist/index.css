@@ -4,12 +4,31 @@
 /* CSS variables (these can be overwritten) */
 :root {
 	/* general */
-	--mdb-border-color: #808080;
+	--mdb-border-color: #c0c0c0;
 	--mdb-background-color: #fefefe;
 	--mdb-color: #080808;
 	--mdb-max-page-width: 1024px;
-	--mdb-small-padding: 8px;
 	--mdb-font-family-sans-serif: 'Inter';
+
+	/* Button */
+	--mdb-button-color: #e8e8e8;
+	--mdb-button-border-color: #c0c0c0;
+	--mdb-button-hover-color: #f0f0f0;
+	--mdb-button-active-color: #d8d8d8;
+	/* Button.nav */
+	--mdb-button-nav-color: var(--mdb-background-color);
+	--mdb-button-nav-border-color: var(--mdb-border-color);
+	--mdb-button-nav-hover-color: var(--mdb-button-hover-color);
+	--mdb-button-nav-active-color: var(--mdb-button-active-color);
+	/* Button.primary */
+	--mdb-button-primary-color: #2048f0;
+	--mdb-button-primary-border-color: #6080ff;
+	--mdb-button-primary-hover-color: #6080ff;
+	--mdb-button-primary-active-color: #2030e0;
+
+	/* Icon */
+	--mdb-icon-stroke: var(--mdb-color);
+	--mdb-icon-stroke-width: 2px;
 
 	/* Navigation/Navbar */
 	--mdb-navigation-navbar-height: 64px;
@@ -17,5 +36,8 @@
 
 /* set some defaults */
 body {
+	margin: 0;
+	overflow-x: hidden;
+	width: 100vw;
 	font-family: var(--mdb-font-family-sans-serif), sans-serif;
 }

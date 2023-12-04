@@ -1,7 +1,10 @@
 .mdb-navigation-navbar {
+	z-index: 99;
 	position: fixed;
 	top: 0;
 	left: 0;
+	margin: 0;
+	padding: 0;
 	width: 100vw;
 	height: var(--mdb-navigation-navbar-height);
 	border-bottom: 1px solid var(--mdb-border-color);
@@ -9,12 +12,37 @@
 	color: var(--mdb-color);
 }
 
+.mdb-navigation-navbar-spacer {
+	width: 100vw;
+	height: var(--mdb-navigation-navbar-height);
+}
+
+.mdb-navigation-navbar h1 {
+	font-size: 14pt;
+	font-weight: 600;
+}
+
+.mdb-navigation-navbar h2 {
+	font-size: 12pt;
+	font-weight: 500;
+}
+
+.mdb-navigation-navbar h3 {
+	font-size: 12pt;
+	font-weight: 400;
+}
+
+.mdb-navigation-navbar p {
+	font-size: 10pt;
+	font-weight: 400;
+}
+
 .mdb-navigation-navbar > .container {
-	position: relative;
+	position: absolute;
 	top: 0;
 	left: 50%;
 	transform: translateX(-50%);
-	width: min(100vw - 2*var(--mdb-small-padding), var(--mdb-max-page-width));
+	width: min(100vw - 2*8px, var(--mdb-max-page-width));
 	height: var(--mdb-navigation-navbar-height);
 	display: flex;
 	flex-flow: row nowrap;
@@ -23,8 +51,8 @@
 	align-content: center;
 }
 
-.mdb-navigation-navbar > .container > .leading,
-.mdb-navigation-navbar > .container > .trailing {
+.mdb-navigation-navbar > .container > .group,
+.mdb-navigation-navbar > .container > .children {
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: flex-start;
@@ -44,57 +72,6 @@
 	flex-grow: 0;
 }
 
-/* the revealer (hamburger menu, dropdown, etc.) should
- * only be displayed if the media query is satisfied */
-.mdb-navigation-navbar > .container > .children > .revealer {
-	display: none;
-}
-
-.mdb-navigation-navbar > .container > .children > .container {
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: flex-start;
-	align-items: center;
-	align-content: center;
-}
-
-.mdb-navigation-navbar > .container > .children.right > .container {
+.mdb-navigation-navbar > .container > .children.right {
 	justify-content: flex-end;
-}
-
-@media only screen and (max-width: 768px) {
-	.mdb-navigation-navbar > .container > .trailing {
-		display: none; /* temp */
-	}
-
-	.mdb-navigation-navbar > .container > .children,
-	.mdb-navigation-navbar > .container > .children.center {
-		position: relative;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		transform: none;
-		flex-grow: 0;
-	}
-
-	.mdb-navigation-navbar > .container > .children > .revealer {
-		display: block;
-	}
-
-	.mdb-navigation-navbar > .container > .children > .container {
-		visibility: hidden;
-		position: absolute;
-		top: 100%;
-		right: 0;
-		flex-flow: column nowrap;
-		width: fit-content;
-		height: fit-content;
-		border: 1px solid var(--mdb-border-color);
-		background-color: var(--mdb-background-color);
-	}
-
-	.mdb-navigation-navbar > .container > .children:hover > .container {
-		visibility: visible;
-	}
 }
