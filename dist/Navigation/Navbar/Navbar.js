@@ -37,7 +37,7 @@ function Navbar(props) {
     }, /*#__PURE__*/_react.default.createElement("div", {
       className: "group"
     }, leading), /*#__PURE__*/_react.default.createElement("div", {
-      className: `children ${align || ''}`
+      className: `group children ${align || ''}`
     }, children), /*#__PURE__*/_react.default.createElement("div", {
       className: "group"
     }, trailing))), /*#__PURE__*/_react.default.createElement("div", {
@@ -54,7 +54,7 @@ function Navbar(props) {
     type: "nav icon",
     align: "right",
     icon: "hamburger"
-  }, children, trailing))), /*#__PURE__*/_react.default.createElement("div", {
+  }, children, /*#__PURE__*/_react.default.createElement("hr", null), trailing))), /*#__PURE__*/_react.default.createElement("div", {
     className: "mdb-navigation-navbar-spacer"
   }));
 }

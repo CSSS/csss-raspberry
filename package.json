@@ -27,8 +27,8 @@
   },
   "scripts": {
     "lint": "eslint lib && eslint src",
-    "build-lib": "rm -Rf dist && NODE_ENV=production babel lib --out-dir dist --copy-files",
-    "start": "react-scripts start",
+    "babel": "rm -Rf dist && NODE_ENV=production babel lib --out-dir dist --copy-files",
+    "start": "npm run babel && react-scripts start",
     "build": "react-scripts build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"

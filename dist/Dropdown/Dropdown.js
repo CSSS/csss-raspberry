@@ -29,26 +29,21 @@ function Dropdown(props) {
     children
   } = props;
   const [isDroppedDown, setIsDroppedDown] = (0, _react.useState)(false);
-  const [isMouseOver, setIsMouseOver] = (0, _react.useState)(false);
-  (0, _react.useEffect)(() => {
-    const clickHandler = () => setIsDroppedDown(false);
-    if (isDroppedDown && !isMouseOver) {
-      window.addEventListener('click', clickHandler);
-      return () => window.removeEventListener('click', clickHandler);
-    }
-
-    // otherwise, don't listen for click events
-  }, [isDroppedDown, isMouseOver]);
+  let iconElement = [];
+  if (icon === 'arrow') {
+    iconElement = isDroppedDown ? /*#__PURE__*/_react.default.createElement(_Icon.Arrow, {
+      className: "rotate"
+    }) : /*#__PURE__*/_react.default.createElement(_Icon.Arrow, null);
+  } else if (icon === 'hamburger') {
+    iconElement = isDroppedDown ? /*#__PURE__*/_react.default.createElement(_Icon.Cross, null) : /*#__PURE__*/_react.default.createElement(_Icon.Hamburger, null);
+  }
   return /*#__PURE__*/_react.default.createElement("div", {
     className: `mdb-dropdown ${type || ''}`,
-    onMouseEnter: () => setIsMouseOver(true),
-    onMouseLeave: () => setIsMouseOver(false)
+    onBlur: () => setIsDroppedDown(false)
   }, /*#__PURE__*/_react.default.createElement(_Button.default, {
     type: type,
     onClick: () => setIsDroppedDown(!isDroppedDown)
-  }, text ? text : [], icon === 'arrow' ? isDroppedDown ? /*#__PURE__*/_react.default.createElement(_Icon.Arrow, {
-    className: "rotate"
-  }) : /*#__PURE__*/_react.default.createElement(_Icon.Arrow, null) : icon === 'hamburger' ? isDroppedDown ? /*#__PURE__*/_react.default.createElement(_Icon.Cross, null) : /*#__PURE__*/_react.default.createElement(_Icon.Hamburger, null) : []), isDroppedDown ? /*#__PURE__*/_react.default.createElement("div", {
-    className: `container ${align || 'center'}`
-  }, children) : []);
+  }, text ? text : [], iconElement), /*#__PURE__*/_react.default.createElement("div", {
+    className: `container ${align || 'center'} ${isDroppedDown ? '' : 'hidden'}`
+  }, children));
 }

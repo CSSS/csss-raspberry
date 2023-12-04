@@ -14,11 +14,17 @@ function App() {
           </Button>
         ]}
       >
-        <Button type='nav'>Navigation Button</Button>
-        <Dropdown type='nav' icon='arrow' text='Navigation Dropdown'>
-          <Button>Nested Button 1</Button>
-          <Button>Nested Button 2</Button>
-          <Button>Nested Button 3</Button>
+        <Button type='nav'>Home</Button>
+        <Button type='nav'>About</Button>
+        <Button type='nav'>Contact</Button>
+        <Dropdown type='nav' icon='arrow' text='Dropdown'>
+          <Button type='nav'>Nested Button</Button>
+          <Button type='nav'>Another Button</Button>
+          <Button type='nav'>Another One</Button>
+          <Dropdown type='nav' icon='arrow' text='Nested Dropdown'>
+            <Button type='nav'>Really Nested</Button>
+            <Button type='nav'>Uh-huh</Button>
+          </Dropdown>
         </Dropdown>
       </Navigation.Navbar>
       <Page>
@@ -62,7 +68,8 @@ function App() {
           <p>Arrow: <Icon.Arrow /></p>
           <p>Cross: <Icon.Cross /></p>
           <p>Hamburger: <Icon.Hamburger /></p>
-          <p>Link: <Icon.Link /></p>
+          <p>Link (NW arrow): <Icon.Link /></p>
+          <p>Option (S+W arrow): <Icon.Option /></p>
         </section>
       </Page>
     </>

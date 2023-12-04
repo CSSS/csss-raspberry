@@ -27,8 +27,15 @@ Object.defineProperty(exports, "Link", {
     return _Link.default;
   }
 });
+Object.defineProperty(exports, "Option", {
+  enumerable: true,
+  get: function () {
+    return _Option.default;
+  }
+});
 var _Arrow = _interopRequireDefault(require("./Arrow"));
 var _Cross = _interopRequireDefault(require("./Cross"));
 var _Hamburger = _interopRequireDefault(require("./Hamburger"));
 var _Link = _interopRequireDefault(require("./Link"));
+var _Option = _interopRequireDefault(require("./Option"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }

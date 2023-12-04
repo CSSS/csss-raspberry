@@ -7,6 +7,11 @@ exports.default = Hamburger;
 var _react = _interopRequireDefault(require("react"));
 require("./Icon.css");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+/**
+ * Hamburger menu icon.
+ * @param {Object} props
+ * @param {String} props.className - Additional class(es) for SVG icon
+ */
 function Hamburger(props) {
   const {
     className

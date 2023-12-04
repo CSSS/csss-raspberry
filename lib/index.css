@@ -5,21 +5,22 @@
 :root {
 	/* general */
 	--mdb-border-color: #c0c0c0;
-	--mdb-background-color: #fefefe;
+	--mdb-background-color: #ffffff;
+	--mdb-background-color-alt: #f0f0f0;
 	--mdb-color: #080808;
 	--mdb-max-page-width: 1024px;
 	--mdb-font-family-sans-serif: 'Inter';
 
 	/* Button */
-	--mdb-button-color: #e8e8e8;
+	--mdb-button-color: #e0e0e0;
 	--mdb-button-border-color: #c0c0c0;
-	--mdb-button-hover-color: #f0f0f0;
+	--mdb-button-hover-color: #e8e8e8;
 	--mdb-button-active-color: #d8d8d8;
 	/* Button.nav */
 	--mdb-button-nav-color: var(--mdb-background-color);
-	--mdb-button-nav-border-color: var(--mdb-border-color);
-	--mdb-button-nav-hover-color: var(--mdb-button-hover-color);
-	--mdb-button-nav-active-color: var(--mdb-button-active-color);
+	--mdb-button-nav-border-color: #c0c0c0;
+	--mdb-button-nav-hover-color: #e8e8e8;
+	--mdb-button-nav-active-color: #d8d8d8;
 	/* Button.primary */
 	--mdb-button-primary-color: #2048f0;
 	--mdb-button-primary-border-color: #6080ff;

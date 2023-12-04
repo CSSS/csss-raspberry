@@ -37,10 +37,16 @@
 	background-color: var(--mdb-button-active-color);
 }
 
+/* Navigation */
+
 .mdb-button.nav {
 	background-color: var(--mdb-button-nav-color);
-	font-size: 12pt;
 	font-weight: 600pt;
+}
+
+.mdb-button.nav.icon .mdb-icon {
+	width: 24px;
+	height: 24px;
 }
 
 .mdb-button.nav:hover {
@@ -51,6 +57,8 @@
 	box-shadow: 0 0 0 1px var(--mdb-button-nav-border-color);
 	background-color: var(--mdb-button-nav-active-color);
 }
+
+/* Primary */
 
 .mdb-button.primary {
 	background-color: var(--mdb-button-primary-color);

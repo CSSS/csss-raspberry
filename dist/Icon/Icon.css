@@ -6,9 +6,9 @@
 }
 
 .mdb-icon > polyline,
-.mdb-icon > line {
+.mdb-icon > line,
+.mdb-icon > path {
 	fill: none;
 	stroke: var(--mdb-icon-stroke);
 	stroke-width: var(--mdb-icon-stroke-width);
-	stroke-linecap: square;
 }
