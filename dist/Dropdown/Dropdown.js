@@ -39,7 +39,9 @@ function Dropdown(props) {
   }
   return /*#__PURE__*/_react.default.createElement("div", {
     className: `mdb-dropdown ${type || ''}`,
-    onBlur: () => setIsDroppedDown(false)
+    onBlur: e => {
+      if (!e.currentTarget.contains(e.relatedTarget)) setIsDroppedDown(false);
+    }
   }, /*#__PURE__*/_react.default.createElement(_Button.default, {
     type: type,
     onClick: () => setIsDroppedDown(!isDroppedDown)
