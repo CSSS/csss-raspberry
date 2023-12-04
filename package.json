@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "license": "AGPL-3.0-or-later",
   "author": "Micah Baker <mdb15@sfu.ca> (https://micahdb.com)",
-  "homepage": "https://micahdbak.github.io/mdb-react-components",
+  "homepage": "https://micahdb.com/mdb-react-components",
   "private": true,
   "main": "dist/index.js",
   "files": [
