@@ -50,6 +50,10 @@
       "quotes": [
         "error",
         "single"
+      ],
+      "max-len": [
+        "error",
+        80
       ]
     }
   },

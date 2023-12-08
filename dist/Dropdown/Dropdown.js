@@ -14,7 +14,9 @@ function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; 
 /**
  * Dropdown menu.
  * @param {Object} props
- * @param {String} props.type - Type of button; e.g., 'icon', 'primary', 'secondary', 'primary icon', 'secondary icon', ...
+ * @param {String} props.type
+ * - Type of button; e.g., 'icon', 'primary', 'secondary', 'primary icon',
+ *   'secondary icon', ...
  * @param {String} props.text - Button text
  * @param {String} props.icon - Button icon; e.g., 'arrow', 'hamburger'
  * @param {String} props.align - Alignment of dropdown menu relative to button
@@ -46,6 +48,10 @@ function Dropdown(props) {
     type: type,
     onClick: () => setIsDroppedDown(!isDroppedDown)
   }, text ? text : [], iconElement), /*#__PURE__*/_react.default.createElement("div", {
-    className: `container ${align || 'center'} ${isDroppedDown ? '' : 'hidden'}`
+    className: `
+          container
+          ${align || 'center'}
+          ${isDroppedDown ? '' : 'hidden'}
+        `
   }, children));
 }

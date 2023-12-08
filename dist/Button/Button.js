@@ -11,7 +11,9 @@ function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; 
 /**
  * Button.
  * @param {Object} props
- * @param {String} props.type - Type of button; e.g., 'icon', 'primary', 'secondary', 'primary icon', 'secondary icon', ...
+ * @param {String} props.type
+ * - Type of button; e.g., 'icon', 'primary', 'secondary', 'primary icon',
+ *   'secondary icon', ...
  * @param {Function} props.onClick - Function to run when clicked
  * @param {String} props.href - URL to go to when clicked
  * @param {Array} props.children - Child elements of Button
