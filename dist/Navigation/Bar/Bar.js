@@ -49,7 +49,7 @@ function Bar(props) {
     alignItems: "center"
   }, leading, align === 'left' && !isMobileDevice ? children : []), isMobileDevice ? /*#__PURE__*/_react.default.createElement(_Dropdown.default, {
     type: "nav icon",
-    align: "right",
+    align: "navigation-bar-stretch",
     icon: "hamburger"
   }, children, /*#__PURE__*/_react.default.createElement("hr", null), trailing) : /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, align === 'center' ? /*#__PURE__*/_react.default.createElement(Flex.Container, {
     flow: "row nowrap",

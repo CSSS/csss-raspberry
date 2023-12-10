@@ -36,6 +36,14 @@
 	transform: translateX(-50%);
 }
 
+/* special stretch alignment for the navigation bar menu */
+.mdb-dropdown-flex.navigation-bar-stretch {
+	position: fixed;
+	top: var(--mdb-navigation-bar-height);
+	right: 0;
+	left: 0;
+}
+
 .mdb-dropdown-flex.right {
 	right: 0;
 }
