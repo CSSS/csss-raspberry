@@ -15,7 +15,7 @@ Object.defineProperty(exports, "Dropdown", {
     return _Dropdown.default;
   }
 });
-exports.Navigation = exports.Icon = exports.Grid = void 0;
+exports.Navigation = exports.Icon = exports.Grid = exports.Flexbox = void 0;
 Object.defineProperty(exports, "Page", {
   enumerable: true,
   get: function () {
@@ -24,9 +24,11 @@ Object.defineProperty(exports, "Page", {
 });
 exports.helpers = void 0;
 var _Button = _interopRequireDefault(require("./Button"));
+var _Dropdown = _interopRequireDefault(require("./Dropdown"));
+var Flexbox = _interopRequireWildcard(require("./Flexbox"));
+exports.Flexbox = Flexbox;
 var Grid = _interopRequireWildcard(require("./Grid"));
 exports.Grid = Grid;
-var _Dropdown = _interopRequireDefault(require("./Dropdown"));
 var Icon = _interopRequireWildcard(require("./Icon"));
 exports.Icon = Icon;
 var Navigation = _interopRequireWildcard(require("./Navigation"));

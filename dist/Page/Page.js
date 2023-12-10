@@ -9,8 +9,8 @@ require("./Page.css");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 /**
  * Main page.
- * @param {Object} props
- * @param {Array} props.children - Child elements of Page
+ * @param {object} props
+ * @param {array} props.children - Child elements of Page
  */
 function Page(props) {
   const {

@@ -10,13 +10,13 @@ function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return 
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && Object.prototype.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
 /**
  * Button.
- * @param {Object} props
- * @param {String} props.type
+ * @param {object} props
+ * @param {string} props.type
  * - Type of button; e.g., 'icon', 'primary', 'secondary', 'primary icon',
  *   'secondary icon', ...
- * @param {Function} props.onClick - Function to run when clicked
- * @param {String} props.href - URL to go to when clicked
- * @param {Array} props.children - Child elements of Button
+ * @param {function} props.onClick - Function to run when clicked
+ * @param {string} props.href - URL to go to when clicked
+ * @param {array} props.children - Child elements of Button
  */
 function Button(props) {
   const {

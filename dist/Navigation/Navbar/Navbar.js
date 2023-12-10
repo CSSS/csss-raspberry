@@ -15,14 +15,14 @@ const smallScreenQuery = '(min-width: 768px)';
 
 /**
  * Horizontal navigation bar displayed at the top of the screen.
- * @param {Object} props
- * @param {String} props.align
+ * @param {object} props
+ * @param {string} props.align
  * - Alignment of Navbar's children (between leading and trailing)
- * @param {Array} props.leading
+ * @param {array} props.leading
  * - Leading elements (usually icon, icon and title, or just title)
- * @param {Array} props.trailing
+ * @param {array} props.trailing
  * - Trailing elements (usually page status information)
- * @param {Array} props.children - Child elements of Navbar
+ * @param {array} props.children - Child elements of Navbar
  */
 function Navbar(props) {
   const {

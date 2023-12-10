@@ -13,14 +13,14 @@ function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return 
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && Object.prototype.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
 /**
  * Dropdown menu.
- * @param {Object} props
- * @param {String} props.type
+ * @param {object} props
+ * @param {string} props.type
  * - Type of button; e.g., 'icon', 'primary', 'secondary', 'primary icon',
  *   'secondary icon', ...
- * @param {String} props.text - Button text
- * @param {String} props.icon - Button icon; e.g., 'arrow', 'hamburger'
- * @param {String} props.align - Alignment of dropdown menu relative to button
- * @param {Array} props.children - Child elements of Dropdown
+ * @param {string} props.text - Button text
+ * @param {string} props.icon - Button icon; e.g., 'arrow', 'hamburger'
+ * @param {string} props.align - Alignment of dropdown menu relative to button
+ * @param {array} props.children - Child elements of Dropdown
  */
 function Dropdown(props) {
   const {
