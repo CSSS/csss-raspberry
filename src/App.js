@@ -2,7 +2,6 @@ import React from 'react';
 
 import {
   Button,
-  Grid,
   Dropdown,
   Icon,
   Navigation,
@@ -12,9 +11,9 @@ import {
 function App() {
   return (
     <>
-      <Navigation.Navbar
+      <Navigation.Bar
         align='center'
-        leading={[<h1>Navigation.Navbar</h1>]}
+        leading={[<h1>Navigation.Bar</h1>]}
         trailing={[
           <Button
             type='primary'
@@ -36,7 +35,7 @@ function App() {
             <Button type='nav'>Uh-huh</Button>
           </Dropdown>
         </Dropdown>
-      </Navigation.Navbar>
+      </Navigation.Bar>
       <Page>
         <section>
           <h1>Button</h1>

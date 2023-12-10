@@ -18,7 +18,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * @param {string} props.justifySelf
  * @param {string} props.alignSelf
  * - See https://css-tricks.com/snippets/css/complete-guide-grid/
+ * @param {string} props.flex - Flex item grow, shrink, and basis shorthand
  * @param {object} props.style - Additional styles
+ * @param {string} props.className - Additional classes
  * @param {array} props.children - Child elements of Item
  */
 function Item(props) {
@@ -30,7 +32,9 @@ function Item(props) {
     area,
     justifySelf,
     alignSelf,
+    flex,
     style,
+    className,
     children
   } = props;
   const gridStyle = {
@@ -41,9 +45,11 @@ function Item(props) {
     gridArea: area,
     justifySelf,
     alignSelf,
+    flex,
     ...style
   };
   return /*#__PURE__*/_react.default.createElement("div", {
-    style: gridStyle
+    style: gridStyle,
+    className: className
   }, children);
 }

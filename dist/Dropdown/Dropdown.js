@@ -6,7 +6,9 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = Dropdown;
 var _react = _interopRequireWildcard(require("react"));
 var _Button = _interopRequireDefault(require("../Button"));
+var Flex = _interopRequireWildcard(require("../Flex"));
 var _Icon = require("../Icon");
+var _helpers = require("../helpers");
 require("./Dropdown.css");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function (e) { return e ? t : r; })(e); }
@@ -40,18 +42,17 @@ function Dropdown(props) {
     iconElement = isDroppedDown ? /*#__PURE__*/_react.default.createElement(_Icon.Cross, null) : /*#__PURE__*/_react.default.createElement(_Icon.Hamburger, null);
   }
   return /*#__PURE__*/_react.default.createElement("div", {
-    className: `mdb-dropdown ${type || ''}`,
+    className: "mdb-dropdown",
     onBlur: e => {
       if (!e.currentTarget.contains(e.relatedTarget)) setIsDroppedDown(false);
     }
   }, /*#__PURE__*/_react.default.createElement(_Button.default, {
     type: type,
     onClick: () => setIsDroppedDown(!isDroppedDown)
-  }, text ? text : [], iconElement), /*#__PURE__*/_react.default.createElement("div", {
-    className: `
-          container
-          ${align || 'center'}
-          ${isDroppedDown ? '' : 'hidden'}
-        `
+  }, text ? text : [], iconElement), /*#__PURE__*/_react.default.createElement(Flex.Container, {
+    flow: "column nowrap",
+    justifyContent: "flex-start",
+    alignItems: "stretch",
+    className: (0, _helpers.classList)(['mdb-dropdown-flex', align || 'center', !isDroppedDown ? 'hidden' : ''])
   }, children));
 }

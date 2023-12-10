@@ -3,11 +3,11 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-Object.defineProperty(exports, "Navbar", {
+Object.defineProperty(exports, "Bar", {
   enumerable: true,
   get: function () {
-    return _Navbar.default;
+    return _Bar.default;
   }
 });
-var _Navbar = _interopRequireDefault(require("./Navbar"));
+var _Bar = _interopRequireDefault(require("./Bar"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }

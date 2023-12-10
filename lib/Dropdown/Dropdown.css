@@ -7,15 +7,10 @@
 	transform: rotate(180deg);
 }
 
-.mdb-dropdown > .container {
+.mdb-dropdown-flex {
 	z-index: 99;
 	position: absolute;
 	top: 100%;
-	display: flex;
-	flex-flow: column nowrap;
-	justify-content: center;
-	align-items: stretch;
-	align-content: flex-start;
 	border-radius: 16px;
 	border: 2px solid var(--mdb-background-color);
 	box-shadow: 0 0 0 1px var(--mdb-border-color);
@@ -23,63 +18,33 @@
 	background-color: var(--mdb-background-color-alt);
 }
 
-.mdb-dropdown > .container > hr {
+.mdb-dropdown-flex.hidden {
+	display: none;
+}
+
+.mdb-dropdown-flex.left {
+	left: 0;
+}
+
+.mdb-dropdown-flex.center {
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.mdb-dropdown-flex.right {
+	right: 0;
+}
+
+.mdb-dropdown-flex > hr {
 	margin: 8px;
 	width: calc(100% - 16px);
 	border: none;
 	border-top: 1px solid var(--mdb-border-color);
 }
 
-.mdb-dropdown > .container.hidden {
-	display: none;
-}
-
-.mdb-dropdown > .container.left {
-	left: 0;
-}
-
-.mdb-dropdown > .container.center {
-	left: 50%;
-	transform: translateX(-50%);
-}
-
-.mdb-dropdown > .container.right {
-	right: 0;
-}
-
-.mdb-dropdown > .container > p,
-.mdb-dropdown .mdb-dropdown > .mdb-button,
-.mdb-dropdown .mdb-dropdown > .mdb-button:hover,
-.mdb-dropdown .mdb-dropdown > .mdb-button:hover:active {
-	margin: 8px 4px;
-	padding: 0;
-	background-color: transparent;
-	color: var(--mdb-color);
+.mdb-dropdown-flex > p {
+	margin: 0 4px;
+	white-space: nowrap;
 	font-size: 10pt;
 	font-weight: 400;
-	line-height: 12px;
-	white-space: nowrap;
-	cursor: auto;
-}
-
-.mdb-dropdown .mdb-dropdown > .mdb-button > span::after {
-	content: ":";
-}
-
-.mdb-dropdown .mdb-dropdown > .mdb-button > .mdb-icon {
-	display: none;
-}
-
-.mdb-dropdown .mdb-dropdown > .container.hidden {
-	display: flex;
-}
-
-.mdb-dropdown .mdb-dropdown > .container {
-	position: static;
-	transform: none;
-	border-radius: 0;
-	border: none;
-	box-shadow: none;
-	padding: 0;
-	background-color: transparent;
 }

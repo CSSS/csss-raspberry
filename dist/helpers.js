@@ -4,11 +4,12 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.checkMediaQuery = checkMediaQuery;
+exports.classList = classList;
 exports.watchMediaQuery = watchMediaQuery;
 /**
  * Checks if a media query matches.
- * @param {String} query - The media query to check.
- * @returns {Boolean} - The result of checking the media query.
+ * @param {string} query - The media query to check.
+ * @returns {boolean} - The result of checking the media query.
  */
 function checkMediaQuery(query) {
   return window.matchMedia(query).matches;
@@ -16,9 +17,26 @@ function checkMediaQuery(query) {
 
 /**
  * Watches a given media query, calling the provided function on change.
- * @param {String} query - The media query to watch.
- * @param {Function} onChange - The function to call on change.
+ * @param {string} query - The media query to watch.
+ * @param {function} onChange - The function to call on change.
  */
 function watchMediaQuery(query, onChange) {
   window.matchMedia(query).addEventListener('change', e => onChange(e.matches));
+}
+
+/**
+ * Constructs a list of classes
+ * @param {array} classNames
+ * - Array of class names, where only truthy values are included in the list
+ * @returns {string}
+ * - List of classes, where each class name is separated with a space
+ */
+function classList(classNames) {
+  let list = '';
+  classNames.forEach((className, index) => {
+    if (className) {
+      list += `${index > 0 ? ' ' : ''}${className}`;
+    }
+  });
+  return list;
 }

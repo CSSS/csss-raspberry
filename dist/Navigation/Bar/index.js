@@ -4,6 +4,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var _Navbar = _interopRequireDefault(require("./Navbar"));
+var _Bar = _interopRequireDefault(require("./Bar"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-var _default = exports.default = _Navbar.default;
+var _default = exports.default = _Bar.default;
