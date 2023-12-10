@@ -3,9 +3,9 @@ import React from 'react';
 import {
   Button,
   Dropdown,
+  Grid,
   Icon,
-  Navigation,
-  Page
+  Navigation
 } from 'mdb-react-components';
 
 function App() {
@@ -30,14 +30,30 @@ function App() {
           <Button type='nav'>Nested Button</Button>
           <Button type='nav'>Another Button</Button>
           <Button type='nav'>Another One</Button>
-          <Dropdown type='nav' icon='arrow' text='Nested Dropdown'>
+          <Dropdown
+            type='nav'
+            icon='arrow'
+            text='Nested Dropdown'
+            expand={true}
+          >
             <Button type='nav'>Really Nested</Button>
             <Button type='nav'>Uh-huh</Button>
           </Dropdown>
         </Dropdown>
       </Navigation.Bar>
-      <Page>
-        <section>
+      <Grid.Container
+        rows='auto auto auto'
+        columns='var(--mdb-page-margin) 1fr 1fr var(--mdb-page-margin)'
+        areas={[
+          '. a b .',
+          '. c . .',
+          '. footer footer .'
+        ]}
+        style={{
+          width: '100vw'
+        }}
+      >
+        <section style={{ gridArea: 'a' }}>
           <h1>Button</h1>
           <p>
             The following &apos;link&apos; buttons include the Icon.Link
@@ -52,8 +68,7 @@ function App() {
           <Button href='#'>Plain Link <Icon.Link /></Button>
           <Button>Plain Button</Button>
         </section>
-        <hr />
-        <section>
+        <section style={{ gridArea: 'b' }}>
           <h1>Dropdown</h1>
           <Dropdown type='primary' text='Primary Dropdown'>
             <p>Each child element is a row.</p>
@@ -111,8 +126,7 @@ function App() {
             <p>Each child element is a row.</p>
           </Dropdown>
         </section>
-        <hr />
-        <section>
+        <section style={{ gridArea: 'c' }}>
           <h1>Icon</h1>
           <p>Icon&apos;s are inline-blocks.</p>
           <p>Arrow: <Icon.Arrow /></p>
@@ -121,7 +135,10 @@ function App() {
           <p>Link (NW arrow): <Icon.Link /></p>
           <p>Option (S+W arrow): <Icon.Option /></p>
         </section>
-      </Page>
+        <Grid.Item area='footer'>
+          <p>This is a footer.</p>
+        </Grid.Item>
+      </Grid.Container>
     </>
   );
 }

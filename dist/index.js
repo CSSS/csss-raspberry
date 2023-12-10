@@ -15,14 +15,7 @@ Object.defineProperty(exports, "Dropdown", {
     return _Dropdown.default;
   }
 });
-exports.Navigation = exports.Icon = exports.Grid = exports.Flex = void 0;
-Object.defineProperty(exports, "Page", {
-  enumerable: true,
-  get: function () {
-    return _Page.default;
-  }
-});
-exports.helpers = void 0;
+exports.helpers = exports.Navigation = exports.Icon = exports.Grid = exports.Flex = void 0;
 var _Button = _interopRequireDefault(require("./Button"));
 var _Dropdown = _interopRequireDefault(require("./Dropdown"));
 var Flex = _interopRequireWildcard(require("./Flex"));
@@ -33,7 +26,6 @@ var Icon = _interopRequireWildcard(require("./Icon"));
 exports.Icon = Icon;
 var Navigation = _interopRequireWildcard(require("./Navigation"));
 exports.Navigation = Navigation;
-var _Page = _interopRequireDefault(require("./Page"));
 var helpers = _interopRequireWildcard(require("./helpers"));
 exports.helpers = helpers;
 require("./index.css");

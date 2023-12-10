@@ -22,6 +22,8 @@ function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; 
  * @param {string} props.text - Button text
  * @param {string} props.icon - Button icon; e.g., 'arrow', 'hamburger'
  * @param {string} props.align - Alignment of dropdown menu relative to button
+ * @param {boolean} props.expand
+ * - Expand Dropdown if true; use if recursively using Dropdowns
  * @param {array} props.children - Child elements of Dropdown
  */
 function Dropdown(props) {
@@ -46,7 +48,7 @@ function Dropdown(props) {
     onBlur: e => {
       if (!e.currentTarget.contains(e.relatedTarget)) setIsDroppedDown(false);
     }
-  }, /*#__PURE__*/_react.default.createElement(_Button.default, {
+  }, /*#__PURE__*/_react.default.createElement("p", null, text ? text : 'Menu'), /*#__PURE__*/_react.default.createElement(_Button.default, {
     type: type,
     onClick: () => setIsDroppedDown(!isDroppedDown)
   }, text ? text : [], iconElement), /*#__PURE__*/_react.default.createElement(Flex.Container, {

@@ -7,6 +7,11 @@
 	transform: rotate(180deg);
 }
 
+/* don't display the (just) text element; this is for recursive Dropdowns */
+.mdb-dropdown > p {
+	display: none;
+}
+
 .mdb-dropdown-flex {
 	z-index: 99;
 	position: absolute;
@@ -43,8 +48,40 @@
 }
 
 .mdb-dropdown-flex > p {
-	margin: 0 4px;
+	margin: 8px;
 	white-space: nowrap;
 	font-size: 10pt;
 	font-weight: 400;
+}
+
+/* expand recursive Dropdowns */
+
+/* don't display the clickable button */
+.mdb-dropdown-flex .mdb-dropdown > .mdb-button {
+	display: none;
+}
+
+/* show the (just) text element */
+.mdb-dropdown-flex .mdb-dropdown > p {
+	display: block;
+	margin: 8px;
+	white-space: nowrap;
+	font-size: 10pt;
+	font-weight: 400;
+}
+
+.mdb-dropdown-flex .mdb-dropdown-flex {
+	z-index: auto;
+	position: static;
+	transform: none;
+	border-radius: 0;
+	border: none;
+	box-shadow: none;
+	padding: 0;
+	background-color: transparent;
+}
+
+/* do not hide recursive Dropdown flexboxes */
+.mdb-dropdown-flex .mdb-dropdown-flex.hidden {
+	display: flex;
 }
