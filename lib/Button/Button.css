@@ -8,19 +8,20 @@
 	border-radius: 8px;
 	border: none;
 	padding: 10px;
-	background-color: var(--mdb-button-color);
-	color: var(--mdb-color);
+	background-color: var(--mdb-button-idle-color);
+	color: var(--mdb-button-color);
 	font-size: 12pt;
 	font-weight: 400;
 	line-height: 16px;
 	white-space: nowrap;
 	text-decoration: none;
-	transition: background-color ease 0.1s;
+	transition: background-color ease var(--mdb-transition-time);
 }
 
 .mdb-button span,
 .mdb-button .mdb-icon {
 	margin: 0 4px;
+	--mdb-icon-stroke: var(--mdb-button-color);
 }
 
 .mdb-button.icon .mdb-icon {
@@ -40,13 +41,8 @@
 /* Navigation */
 
 .mdb-button.nav {
-	background-color: var(--mdb-button-nav-color);
-	font-weight: 600pt;
-}
-
-.mdb-button.nav.icon .mdb-icon {
-	width: 24px;
-	height: 24px;
+	background-color: var(--mdb-button-nav-idle-color);
+	color: var(--mdb-button-nav-color);
 }
 
 .mdb-button.nav:hover {
@@ -58,11 +54,20 @@
 	background-color: var(--mdb-button-nav-active-color);
 }
 
+.mdb-button.nav.icon .mdb-icon {
+	width: 24px;
+	height: 24px;
+}
+
+.mdb-button.primary .mdb-icon {
+	--mdb-icon-stroke: var(--mdb-button-nav-color);
+}
+
 /* Primary */
 
 .mdb-button.primary {
-	background-color: var(--mdb-button-primary-color);
-	color: var(--mdb-background-color);
+	background-color: var(--mdb-button-primary-idle-color);
+	color: var(--mdb-button-primary-color);
 }
 
 .mdb-button.primary:hover {
@@ -75,5 +80,5 @@
 }
 
 .mdb-button.primary .mdb-icon {
-	--mdb-icon-stroke: var(--mdb-background-color);
+	--mdb-icon-stroke: var(--mdb-button-primary-color);
 }

@@ -19,6 +19,7 @@
 	border-radius: 16px;
 	border: 2px solid var(--mdb-background-color);
 	box-shadow: 0 0 0 1px var(--mdb-border-color);
+	filter: drop-shadow(0 0 4px var(--mdb-shadow-color));
 	padding: 4px;
 	background-color: var(--mdb-background-color-alt);
 }
@@ -85,6 +86,7 @@
 	border-radius: 0;
 	border: none;
 	box-shadow: none;
+	filter: none;
 	padding: 0;
 	background-color: transparent;
 }

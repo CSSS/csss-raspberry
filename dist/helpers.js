@@ -5,6 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.checkMediaQuery = checkMediaQuery;
 exports.classList = classList;
+exports.setTheme = setTheme;
 exports.watchMediaQuery = watchMediaQuery;
 /**
  * Checks if a media query matches.
@@ -39,4 +40,14 @@ function classList(classNames) {
     }
   });
   return list;
+}
+
+/**
+ * Sets the current theme
+ * @param {string} oldTheme - Previous theme in use
+ * @param {string} newTheme - New theme to use
+ */
+function setTheme(oldTheme, newTheme) {
+  if (oldTheme && document.body.classList.contains(oldTheme)) document.body.classList.remove(oldTheme);
+  if (newTheme && !document.body.classList.contains(newTheme)) document.body.classList.add(newTheme);
 }

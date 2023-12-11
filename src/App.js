@@ -1,14 +1,42 @@
-import React from 'react';
-
+import React, { useState, useEffect } from 'react';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { obsidian } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import {
   Button,
   Dropdown,
   Grid,
   Icon,
-  Navigation
+  Navigation,
+  helpers
 } from 'mdb-react-components';
 
-function App() {
+function Code(props) {
+  const { code } = props;
+
+  return (
+    <SyntaxHighlighter language='javascript' style={obsidian}>
+      {code}
+    </SyntaxHighlighter>
+  );
+}
+
+const buttonCode =
+`// import Button
+import { Button } from 'mdb-react-components';
+
+export default function Component() {
+  return <Button>Yay!</Button>;
+}`;
+
+export default function App() {
+  const [currentTheme, setCurrentTheme] = useState('');
+  const [theme, setTheme] = useState('');
+
+  useEffect(() => {
+    helpers.setTheme(currentTheme, theme);
+    setCurrentTheme(theme);
+  }, [theme]);
+
   return (
     <>
       <Navigation.Bar
@@ -16,10 +44,17 @@ function App() {
         leading={[<h1>Navigation.Bar</h1>]}
         trailing={[
           <Button
+            onClick={() => {
+              theme === 'dark' ? setTheme('') : setTheme('dark');
+            }}
+          >
+            Theme
+          </Button>,
+          <Button
             type='primary'
             href='https://github.com/micahdbak/mdb-react-components'
           >
-            mdb-react-components <Icon.Link />
+            GitHub <Icon.Link />
           </Button>
         ]}
       >
@@ -49,12 +84,14 @@ function App() {
           '. c . .',
           '. footer footer .'
         ]}
+        gap='4px'
         style={{
           width: '100vw'
         }}
       >
         <section style={{ gridArea: 'a' }}>
           <h1>Button</h1>
+          <Code code={buttonCode} />
           <p>
             The following &apos;link&apos; buttons include the Icon.Link
             component, seen in a below section.
@@ -142,5 +179,3 @@ function App() {
     </>
   );
 }
-
-export default App;
