@@ -7,8 +7,15 @@
 
 .mdb-icon > polyline,
 .mdb-icon > line,
-.mdb-icon > path {
+.mdb-icon > path,
+.mdb-icon > circle {
 	fill: none;
-	stroke: var(--mdb-icon-stroke);
+	stroke: var(--mdb-icon-color);
 	stroke-width: var(--mdb-icon-stroke-width);
 }
+
+.mdb-icon.fill > circle {
+	fill: var(--mdb-icon-color);
+	stroke: none;
+	stroke-width: var(--mdb-icon-stroke-width);
+} 

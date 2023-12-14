@@ -3,17 +3,17 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = Hamburger;
+exports.default = Moon;
 var _react = _interopRequireDefault(require("react"));
 var _helpers = require("../helpers");
 require("./Icon.css");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 /**
- * Hamburger menu icon.
+ * Moon icon.
  * @param {object} props
  * @param {string} props.className - Additional class(es) for SVG icon
  */
-function Hamburger(props) {
+function Moon(props) {
   const {
     className
   } = props;
@@ -26,20 +26,7 @@ function Hamburger(props) {
     y: "0px",
     viewBox: "0 0 32 32",
     xmlSpace: "preserve"
-  }, /*#__PURE__*/_react.default.createElement("line", {
-    x1: "4",
-    y1: "8",
-    x2: "28",
-    y2: "8"
-  }), /*#__PURE__*/_react.default.createElement("line", {
-    x1: "4",
-    y1: "16",
-    x2: "28",
-    y2: "16"
-  }), /*#__PURE__*/_react.default.createElement("line", {
-    x1: "4",
-    y1: "24",
-    x2: "28",
-    y2: "24"
+  }, /*#__PURE__*/_react.default.createElement("path", {
+    d: "M27.5,19.5C26,24.4,21.4,28,16,28C9.4,28,4,22.6,4,16c0-5.4,3.6-10,8.5-11.5C12.2,5.6,12,6.8,12,8c0,6.6,5.4,12,12,12C25.2,20,26.4,19.8,27.5,19.5z"
   }));
 }

@@ -4,16 +4,13 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = Bar;
-var _react = _interopRequireWildcard(require("react"));
+var _react = _interopRequireDefault(require("react"));
 var _Dropdown = _interopRequireDefault(require("../../Dropdown"));
 var Flex = _interopRequireWildcard(require("../../Flex"));
-var _helpers = require("../../helpers");
 require("./Bar.css");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function (e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && Object.prototype.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
-const mobileDeviceQuery = '(max-width: 768px)';
-
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 /**
  * Horizontal navigation bar displayed at the top of the screen.
  * @param {object} props
@@ -23,6 +20,8 @@ const mobileDeviceQuery = '(max-width: 768px)';
  * - Leading elements (usually icon, icon and title, or just title)
  * @param {array} props.trailing
  * - Trailing elements (usually page status information)
+ * @param {boolean} props.compress
+ * - Whether to compress the navigation bar or not
  * @param {array} props.children - Child elements of Bar
  */
 function Bar(props) {
@@ -30,12 +29,9 @@ function Bar(props) {
     align,
     leading,
     trailing,
+    compress,
     children
   } = props;
-  const [isMobileDevice, setIsMobileDevice] = (0, _react.useState)((0, _helpers.checkMediaQuery)(mobileDeviceQuery));
-  (0, _react.useEffect)(() => {
-    (0, _helpers.watchMediaQuery)(mobileDeviceQuery, matches => setIsMobileDevice(matches));
-  }, []);
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "mdb-navigation-bar"
   }, /*#__PURE__*/_react.default.createElement(Flex.Container, {
@@ -47,11 +43,11 @@ function Bar(props) {
     flow: "row nowrap",
     justifyContent: "flex-start",
     alignItems: "center"
-  }, leading, align === 'left' && !isMobileDevice ? children : []), isMobileDevice ? /*#__PURE__*/_react.default.createElement(_Dropdown.default, {
-    type: "nav icon",
+  }, leading, align === 'left' && !compress ? children : []), compress ? /*#__PURE__*/_react.default.createElement(_Dropdown.default, {
+    className: "transparent large icon",
     align: "navigation-bar-stretch",
     icon: "hamburger"
-  }, children, /*#__PURE__*/_react.default.createElement("hr", null), trailing) : /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, align === 'center' ? /*#__PURE__*/_react.default.createElement(Flex.Container, {
+  }, children, /*#__PURE__*/_react.default.createElement("hr", null), trailing) : /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, !align || align === 'center' ? /*#__PURE__*/_react.default.createElement(Flex.Container, {
     flow: "row nowrap",
     justifyContent: "center",
     alignItems: "center",

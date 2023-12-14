@@ -5,6 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = Link;
 var _react = _interopRequireDefault(require("react"));
+var _helpers = require("../helpers");
 require("./Icon.css");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 /**
@@ -17,7 +18,7 @@ function Link(props) {
     className
   } = props;
   return /*#__PURE__*/_react.default.createElement("svg", {
-    className: `mdb-icon ${className || ''}`,
+    className: (0, _helpers.classList)(['mdb-icon', className || '']),
     version: "1.1",
     id: "Layer_1",
     xmlns: "http://www.w3.org/2000/svg",

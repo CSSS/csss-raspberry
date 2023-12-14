@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { obsidian } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+//import SyntaxHighlighter from 'react-syntax-highlighter';
+//import { obsidian } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import {
   Button,
   Dropdown,
-  Grid,
+  Flex,
   Icon,
   Navigation,
   helpers
 } from 'mdb-react-components';
 
+const isMobileDeviceQuery = '(max-width: 880px)';
+const preferSidebarQuery = '(min-width: 1080px)';
+
+/*
 function Code(props) {
   const { code } = props;
 
@@ -19,163 +23,258 @@ function Code(props) {
     </SyntaxHighlighter>
   );
 }
-
-const buttonCode =
-`// import Button
-import { Button } from 'mdb-react-components';
-
-export default function Component() {
-  return <Button>Yay!</Button>;
-}`;
+*/
 
 export default function App() {
   const [currentTheme, setCurrentTheme] = useState('');
   const [theme, setTheme] = useState('');
+  const [isMobileDevice, setIsMobileDevice] = useState(
+    helpers.checkMediaQuery(isMobileDeviceQuery)
+  );
+  const [preferSidebar, setPreferSidebar] = useState(
+    helpers.checkMediaQuery(preferSidebarQuery)
+  );
 
+  // function called by toggle theme button
+  function toggleTheme() {
+    setTheme(theme === 'dark' ? '' : 'dark');
+  }
+
+  // leading elements of navigation
+  const leading = (
+    <h1 style={{ margin: '12px', fontSize: '14pt' }}>mdb-react-components</h1>
+  );
+
+  // class name(s) for menu buttons
+  const menuClassName = helpers.classList([
+    isMobileDevice ? '' : 'transparent',
+    preferSidebar ? 'small' : ''
+  ]);
+
+  // styles for menu buttons
+  const menuStyle = preferSidebar ? { justifyContent: 'flex-start' } : {};
+
+  // menu elements of navigation
+  const menu = (
+    <>
+      <Button className={menuClassName} style={menuStyle}>
+        Button 1
+      </Button>
+      <Dropdown
+        className={menuClassName}
+        style={menuStyle}
+        text='Dropdown'
+        icon='arrow'
+        iconAlign='left'
+        isStaticDropdown={preferSidebar}
+      >
+        <Button
+          className={menuClassName}
+          style={menuStyle}
+          depth={preferSidebar ? 1 : 0}
+        >
+          Button A
+        </Button>
+        <Button
+          className={menuClassName}
+          style={menuStyle}
+          depth={preferSidebar ? 1 : 0}
+        >
+          Button B
+        </Button>
+      </Dropdown>
+    </>
+  );
+
+  // trailing elements of navigation
+  const trailing = (
+    <>
+      <Button
+        className={preferSidebar ? 'small' : 'icon'}
+        onClick={toggleTheme}
+        style={preferSidebar ? { marginTop: 'auto' } : {}}
+      >
+        {theme === 'dark' ? <Icon.Moon /> : <Icon.Sun />}
+        {preferSidebar || isMobileDevice ? 'Toggle Theme' : []}
+      </Button>
+      <Button
+        className={helpers.classList(['primary', preferSidebar ? 'small' : ''])}
+        href='https://github.com/micahdbak/mdb-react-components'
+      >
+        <Icon.Link />
+        See GitHub
+      </Button>
+    </>
+  );
+
+  // main content of page
+  const main = (
+    <>
+      <p>Buttons</p>
+      <Button className='large icon'><Icon.Sun /></Button>
+      <Button className='large'>
+        <Icon.Sun />
+        Button
+      </Button>
+      <Button className='large'>Button</Button>
+      <Button className='icon'><Icon.Sun /></Button>
+      <Button>
+        <Icon.Sun />
+        Button
+      </Button>
+      <Button>Button</Button>
+      <Button className='small icon'><Icon.Sun /></Button>
+      <Button className='small'>
+        <Icon.Sun />
+        Button
+      </Button>
+      <Button className='small'>Button</Button>
+      <br />
+      <Button className='primary large icon'><Icon.Sun /></Button>
+      <Button className='primary large'>
+        <Icon.Sun />
+        Button
+      </Button>
+      <Button className='primary large'>Button</Button>
+      <Button className='primary icon'><Icon.Sun /></Button>
+      <Button className='primary'>
+        <Icon.Sun />
+        Button
+      </Button>
+      <Button className='primary'>Button</Button>
+      <Button className='primary small icon'><Icon.Sun /></Button>
+      <Button className='primary small'>
+        <Icon.Sun />
+        Button
+      </Button>
+      <Button className='primary small'>Button</Button>
+      <br />
+      <Button className='transparent large icon'><Icon.Sun /></Button>
+      <Button className='transparent large'>
+        <Icon.Sun />
+        Button
+      </Button>
+      <Button className='transparent large'>Button</Button>
+      <Button className='transparent icon'><Icon.Sun /></Button>
+      <Button className='transparent'>
+        <Icon.Sun />
+        Button
+      </Button>
+      <Button className='transparent'>Button</Button>
+      <Button className='transparent small icon'><Icon.Sun /></Button>
+      <Button className='transparent small'>
+        <Icon.Sun />
+        Button
+      </Button>
+      <Button className='transparent small'>Button</Button>
+      <br />
+      <p>Dropdowns</p>
+      <Dropdown className='icon' icon='hamburger' align='left'>
+        <Button>Button</Button>
+      </Dropdown>
+      <br />
+      <Dropdown className='large' text='Dropdown' align='left'>
+        <Button>Button</Button>
+      </Dropdown>
+      <br />
+      <Dropdown
+        className='primary'
+        icon='arrow'
+        text='Dropdown'
+        align='left'
+      >
+        <Button>Button</Button>
+      </Dropdown>
+      <br />
+      <Dropdown
+        className='transparent small'
+        icon='arrow'
+        text='Dropdown'
+        align='left'
+      >
+        <p>Dropdown's have much the same visuals as Buttons.</p>
+        <p>Thus, the specifics won't be outlined!</p>
+      </Dropdown>
+      <p>Icons</p>
+      <p>
+        <Icon.Arrow />
+        <Icon.Bullet />
+        <Icon.Cross />
+        <Icon.Hamburger />
+        <Icon.Link />
+        <Icon.Moon />
+        <Icon.Option />
+        <Icon.Sun />
+        <Icon.WhiteBullet />
+      </p>
+    </>
+  );
+
+  // on load
+  useEffect(() => {
+    helpers.watchMediaQuery(
+      isMobileDeviceQuery,
+      matches => setIsMobileDevice(matches)
+    );
+    helpers.watchMediaQuery(
+      preferSidebarQuery,
+      matches => setPreferSidebar(matches)
+    );
+  }, []);
+
+  // on set theme
   useEffect(() => {
     helpers.setTheme(currentTheme, theme);
     setCurrentTheme(theme);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [theme]);
+
+  if (preferSidebar) {
+    return (
+      <Flex.Container
+        flow='row nowrap'
+        alignItems='stretch'
+        style={{
+          width: '100vw',
+          height: '100vh'
+        }}
+      >
+        <Navigation.Sidebar>
+          {leading}
+          {menu}
+          {trailing}
+        </Navigation.Sidebar>
+        <Flex.Item
+          flex='1 0'
+          style={{
+            padding: '8px',
+            height: 'calc(100vh - 16px)',
+            overflowY: 'scroll'
+          }}
+        >
+          {main}
+        </Flex.Item>
+      </Flex.Container>
+    );
+  }
 
   return (
     <>
       <Navigation.Bar
-        align='center'
-        leading={[<h1>Navigation.Bar</h1>]}
-        trailing={[
-          <Button
-            onClick={() => {
-              theme === 'dark' ? setTheme('') : setTheme('dark');
-            }}
-          >
-            Theme
-          </Button>,
-          <Button
-            type='primary'
-            href='https://github.com/micahdbak/mdb-react-components'
-          >
-            GitHub <Icon.Link />
-          </Button>
-        ]}
+        leading={leading}
+        trailing={trailing}
+        compress={isMobileDevice}
       >
-        <Button type='nav'>Home</Button>
-        <Button type='nav'>About</Button>
-        <Button type='nav'>Contact</Button>
-        <Dropdown type='nav' icon='arrow' text='Dropdown'>
-          <Button type='nav'>Nested Button</Button>
-          <Button type='nav'>Another Button</Button>
-          <Button type='nav'>Another One</Button>
-          <Dropdown
-            type='nav'
-            icon='arrow'
-            text='Nested Dropdown'
-            expand={true}
-          >
-            <Button type='nav'>Really Nested</Button>
-            <Button type='nav'>Uh-huh</Button>
-          </Dropdown>
-        </Dropdown>
+        {menu}
       </Navigation.Bar>
-      <Grid.Container
-        rows='auto auto auto'
-        columns='var(--mdb-page-margin) 1fr 1fr var(--mdb-page-margin)'
-        areas={[
-          '. a b .',
-          '. c . .',
-          '. footer footer .'
-        ]}
-        gap='4px'
+      <div
         style={{
-          width: '100vw'
+          margin: 'auto',
+          width: 'var(--mdb-page-width)'
         }}
       >
-        <section style={{ gridArea: 'a' }}>
-          <h1>Button</h1>
-          <Code code={buttonCode} />
-          <p>
-            The following &apos;link&apos; buttons include the Icon.Link
-            component, seen in a below section.
-          </p>
-          <Button type='primary' href='#'>Primary Link <Icon.Link /></Button>
-          <Button type='primary'>Primary Button</Button>
-          <br />
-          <Button type='nav' href='#'>Navigation Link <Icon.Link /></Button>
-          <Button type='nav'>Navigation Button</Button>
-          <br />
-          <Button href='#'>Plain Link <Icon.Link /></Button>
-          <Button>Plain Button</Button>
-        </section>
-        <section style={{ gridArea: 'b' }}>
-          <h1>Dropdown</h1>
-          <Dropdown type='primary' text='Primary Dropdown'>
-            <p>Each child element is a row.</p>
-          </Dropdown>
-          <Dropdown type='primary' text='Primary Dropdown Arrow' icon='arrow'>
-            <p>Each child element is a row.</p>
-          </Dropdown>
-          <Dropdown
-            type='primary'
-            text='Primary Dropdown Hamburger'
-            icon='hamburger'
-          >
-            <p>Each child element is a row.</p>
-          </Dropdown>
-          <Dropdown type='primary icon' icon='arrow'>
-            <p>Each child element is a row.</p>
-          </Dropdown>
-          <Dropdown type='primary icon' icon='hamburger'>
-            <p>Each child element is a row.</p>
-          </Dropdown>
-          <br />
-          <Dropdown type='nav' text='Navigation Dropdown'>
-            <p>Each child element is a row.</p>
-          </Dropdown>
-          <Dropdown type='nav' text='Navigation Dropdown Arrow' icon='arrow'>
-            <p>Each child element is a row.</p>
-          </Dropdown>
-          <Dropdown
-            type='nav'
-            text='Navigation Dropdown Hamburger'
-            icon='hamburger'
-          >
-            <p>Each child element is a row.</p>
-          </Dropdown>
-          <Dropdown type='nav icon' icon='arrow'>
-            <p>Each child element is a row.</p>
-          </Dropdown>
-          <Dropdown type='nav icon' icon='hamburger'>
-            <p>Each child element is a row.</p>
-          </Dropdown>
-          <br />
-          <Dropdown text='Plain Dropdown'>
-            <p>Each child element is a row.</p>
-          </Dropdown>
-          <Dropdown text='Plain Dropdown Arrow' icon='arrow'>
-            <p>Each child element is a row.</p>
-          </Dropdown>
-          <Dropdown text='Plain Dropdown Hamburger' icon='hamburger'>
-            <p>Each child element is a row.</p>
-          </Dropdown>
-          <Dropdown type='icon' icon='arrow'>
-            <p>Each child element is a row.</p>
-          </Dropdown>
-          <Dropdown type='icon' icon='hamburger'>
-            <p>Each child element is a row.</p>
-          </Dropdown>
-        </section>
-        <section style={{ gridArea: 'c' }}>
-          <h1>Icon</h1>
-          <p>Icon&apos;s are inline-blocks.</p>
-          <p>Arrow: <Icon.Arrow /></p>
-          <p>Cross: <Icon.Cross /></p>
-          <p>Hamburger: <Icon.Hamburger /></p>
-          <p>Link (NW arrow): <Icon.Link /></p>
-          <p>Option (S+W arrow): <Icon.Option /></p>
-        </section>
-        <Grid.Item area='footer'>
-          <p>This is a footer.</p>
-        </Grid.Item>
-      </Grid.Container>
+        {main}
+      </div>
     </>
   );
 }

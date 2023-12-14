@@ -1,0 +1,6 @@
+.mdb-navigation-sidebar {
+	border-right: 1px solid var(--mdb-border-color-alt);
+	padding: var(--mdb-navigation-sidebar-padding);
+	background-color: var(--mdb-background-color-alt);
+	color: var(--mdb-color);
+}

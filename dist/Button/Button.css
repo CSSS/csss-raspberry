@@ -16,16 +16,49 @@
 	white-space: nowrap;
 	text-decoration: none;
 	transition: background-color ease var(--mdb-transition-time);
+	--mdb-button-depth-margin: 20px;
 }
 
 .mdb-button span,
 .mdb-button .mdb-icon {
 	margin: 0 4px;
-	--mdb-icon-stroke: var(--mdb-button-color);
+	--mdb-icon-color: var(--mdb-button-color);
+}
+
+.mdb-button .mdb-icon {
+	width: 16px;
+	height: 16px;
 }
 
 .mdb-button.icon .mdb-icon {
 	margin: 0 0;
+}
+
+.mdb-button.small {
+	margin: 1px;
+	border-radius: 6px;
+	padding: 8px;
+	font-size: 11pt;
+	line-height: 12px;
+	--mdb-button-depth-margin: 16px;
+}
+
+.mdb-button.small .mdb-icon {
+	width: 12px;
+	height: 12px;
+}
+
+.mdb-button.large {
+	border-radius: 8px;
+	padding: 10px;
+	font-size: 13pt;
+	line-height: 20px;
+	--mdb-button-depth-margin: 24px;
+}
+
+.mdb-button.large .mdb-icon {
+	width: 20px;
+	height: 20px;
 }
 
 .mdb-button:hover {
@@ -38,29 +71,32 @@
 	background-color: var(--mdb-button-active-color);
 }
 
-/* Navigation */
+/* Transparent */
 
-.mdb-button.nav {
-	background-color: var(--mdb-button-nav-idle-color);
-	color: var(--mdb-button-nav-color);
+.mdb-button.transparent {
+	background-color: transparent;
+	color: var(--mdb-button-transparent-color);
 }
 
-.mdb-button.nav:hover {
-	background-color: var(--mdb-button-nav-hover-color);
+/* when a transparent button is a child of a dropdown, don't be transparent */
+/*
+.mdb-dropdown-flex .mdb-button.transparent {
+	background-color: var(--mdb-button-transparent-idle-color);
+	color: var(--mdb-button-transparent-color);
+}
+*/
+
+.mdb-button.transparent:hover {
+	background-color: var(--mdb-button-transparent-hover-color);
 }
 
-.mdb-button.nav:hover:active {
-	box-shadow: 0 0 0 1px var(--mdb-button-nav-border-color);
-	background-color: var(--mdb-button-nav-active-color);
-}
-
-.mdb-button.nav.icon .mdb-icon {
-	width: 24px;
-	height: 24px;
+.mdb-button.transparent:hover:active {
+	box-shadow: 0 0 0 1px var(--mdb-button-transparent-border-color);
+	background-color: var(--mdb-button-transparent-active-color);
 }
 
 .mdb-button.primary .mdb-icon {
-	--mdb-icon-stroke: var(--mdb-button-nav-color);
+	--mdb-icon-color: var(--mdb-button-transparent-color);
 }
 
 /* Primary */
@@ -80,5 +116,5 @@
 }
 
 .mdb-button.primary .mdb-icon {
-	--mdb-icon-stroke: var(--mdb-button-primary-color);
+	--mdb-icon-color: var(--mdb-button-primary-color);
 }

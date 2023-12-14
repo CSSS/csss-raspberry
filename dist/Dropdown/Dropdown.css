@@ -3,7 +3,15 @@
 	display: inline-block;
 }
 
-.mdb-dropdown svg.rotate {
+.mdb-dropdown > .mdb-button {
+	width: 100%;
+}
+
+.mdb-dropdown svg.rotate90 {
+	transform: rotate(-90deg);
+}
+
+.mdb-dropdown svg.rotate180 {
 	transform: rotate(180deg);
 }
 
@@ -79,7 +87,8 @@
 	font-weight: 400;
 }
 
-.mdb-dropdown-flex .mdb-dropdown-flex {
+.mdb-dropdown-flex .mdb-dropdown-flex,
+.mdb-dropdown-flex.static {
 	z-index: auto;
 	position: static;
 	transform: none;

@@ -12,16 +12,20 @@ function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; 
 /**
  * Button.
  * @param {object} props
- * @param {string} props.type
+ * @param {string} props.className
  * - Type of button; e.g., 'icon', 'primary', 'secondary', 'primary icon',
- *   'secondary icon', ...
+ *   'secondary icon', ..., and/or size of button; e.g., 'small'
+ * @param {string} props.style - Additional styles
+ * @param {integer} props.depth - Depth of menu
  * @param {function} props.onClick - Function to run when clicked
  * @param {string} props.href - URL to go to when clicked
  * @param {array} props.children - Child elements of Button
  */
 function Button(props) {
   const {
-    type,
+    className,
+    style,
+    depth,
     onClick,
     href,
     children
@@ -33,12 +37,20 @@ function Button(props) {
   });
   if (href !== undefined) {
     return /*#__PURE__*/_react.default.createElement("a", {
-      className: (0, _helpers.classList)(['mdb-button', type || '']),
+      className: (0, _helpers.classList)(['mdb-button', className]),
+      style: {
+        marginLeft: depth ? `calc(${depth} * var(--mdb-button-depth-margin))` : undefined,
+        ...style
+      },
       href: href
     }, mappedChildren);
   }
   return /*#__PURE__*/_react.default.createElement("button", {
-    className: (0, _helpers.classList)(['mdb-button', type || '']),
+    className: (0, _helpers.classList)(['mdb-button', className]),
+    style: {
+      marginLeft: depth ? `calc(${depth} * var(--mdb-button-depth-margin))` : undefined,
+      ...style
+    },
     onClick: onClick
   }, mappedChildren);
 }

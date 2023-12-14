@@ -16,45 +16,64 @@ function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; 
 /**
  * Dropdown menu.
  * @param {object} props
- * @param {string} props.type
+ * @param {string} props.className
  * - Type of button; e.g., 'icon', 'primary', 'secondary', 'primary icon',
- *   'secondary icon', ...
- * @param {string} props.text - Button text
+ *   'secondary icon', ..., and/or size of button; e.g., 'small'
+ * @param {string} props.style - Additional styles (for the Button)
+ * @param {integer} props.depth - Depth of menu
+ * @param {array} props.text - Button text
  * @param {string} props.icon - Button icon; e.g., 'arrow', 'hamburger'
+ * @param {string} props.iconAlign
+ * - Alignment of dropdown icon; e.g., 'left', 'right'; default is right align
  * @param {string} props.align - Alignment of dropdown menu relative to button
- * @param {boolean} props.expand
- * - Expand Dropdown if true; use if recursively using Dropdowns
+ * @param {boolean} props.isDroppedDownInitially
+ * - Whether to be dropped down initially or not
+ * @param {boolean} props.isStaticDropdown
+ * - Whether to display dropdown items statically or not
  * @param {array} props.children - Child elements of Dropdown
  */
 function Dropdown(props) {
   const {
-    type,
+    className,
+    style,
+    depth,
     text,
     icon,
+    iconAlign,
     align,
+    isDroppedDownInitially,
+    isStaticDropdown,
     children
   } = props;
-  const [isDroppedDown, setIsDroppedDown] = (0, _react.useState)(false);
+  const [isDroppedDown, setIsDroppedDown] = (0, _react.useState)(!!isDroppedDownInitially);
   let iconElement = [];
   if (icon === 'arrow') {
-    iconElement = isDroppedDown ? /*#__PURE__*/_react.default.createElement(_Icon.Arrow, {
-      className: "rotate"
-    }) : /*#__PURE__*/_react.default.createElement(_Icon.Arrow, null);
+    if (isStaticDropdown) {
+      iconElement = isDroppedDown ? /*#__PURE__*/_react.default.createElement(_Icon.Arrow, null) : /*#__PURE__*/_react.default.createElement(_Icon.Arrow, {
+        className: "rotate90"
+      });
+    } else {
+      iconElement = isDroppedDown ? /*#__PURE__*/_react.default.createElement(_Icon.Arrow, {
+        className: "rotate180"
+      }) : /*#__PURE__*/_react.default.createElement(_Icon.Arrow, null);
+    }
   } else if (icon === 'hamburger') {
     iconElement = isDroppedDown ? /*#__PURE__*/_react.default.createElement(_Icon.Cross, null) : /*#__PURE__*/_react.default.createElement(_Icon.Hamburger, null);
   }
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "mdb-dropdown",
     onBlur: e => {
-      if (!e.currentTarget.contains(e.relatedTarget)) setIsDroppedDown(false);
+      if (!e.currentTarget.contains(e.relatedTarget) && !isStaticDropdown) setIsDroppedDown(false);
     }
   }, /*#__PURE__*/_react.default.createElement("p", null, text ? text : 'Menu'), /*#__PURE__*/_react.default.createElement(_Button.default, {
-    type: type,
+    className: className,
+    style: style,
+    depth: depth,
     onClick: () => setIsDroppedDown(!isDroppedDown)
-  }, text ? text : [], iconElement), /*#__PURE__*/_react.default.createElement(Flex.Container, {
+  }, iconAlign === 'left' ? /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, iconElement, text ? text : []) : /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, text ? text : [], iconElement)), /*#__PURE__*/_react.default.createElement(Flex.Container, {
     flow: "column nowrap",
     justifyContent: "flex-start",
     alignItems: "stretch",
-    className: (0, _helpers.classList)(['mdb-dropdown-flex', align || 'center', !isDroppedDown ? 'hidden' : ''])
+    className: (0, _helpers.classList)(['mdb-dropdown-flex', align || 'center', isDroppedDown ? '' : 'hidden', isStaticDropdown ? 'static' : ''])
   }, children));
 }

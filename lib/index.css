@@ -12,6 +12,7 @@
 	--mdb-transition-time: 0.1s;
 	--mdb-shadow-color: #00000040;
 	--mdb-border-color: #c0c0c0;
+	--mdb-border-color-alt: #e0e0e0;
 	--mdb-background-color: #ffffff;
 	--mdb-background-color-alt: #f0f0f0;
 	--mdb-color: #080808;
@@ -22,12 +23,12 @@
 	--mdb-button-border-color: #c0c0c0;
 	--mdb-button-hover-color: #e8e8e8;
 	--mdb-button-active-color: #d8d8d8;
-	/* Button.nav */
-	--mdb-button-nav-color: var(--mdb-color);
-	--mdb-button-nav-idle-color: var(--mdb-background-color);
-	--mdb-button-nav-border-color: #c0c0c0;
-	--mdb-button-nav-hover-color: #e8e8e8;
-	--mdb-button-nav-active-color: #d8d8d8;
+	/* Button.transparent */
+	--mdb-button-transparent-color: var(--mdb-color);
+	--mdb-button-transparent-idle-color: var(--mdb-background-color);
+	--mdb-button-transparent-border-color: #c0c0c0;
+	--mdb-button-transparent-hover-color: #e8e8e8;
+	--mdb-button-transparent-active-color: #d8d8d8;
 	/* Button.primary */
 	--mdb-button-primary-color: var(--mdb-background-color);
 	--mdb-button-primary-idle-color: #3458f8;
@@ -36,11 +37,12 @@
 	--mdb-button-primary-active-color: #2848f0;
 
 	/* Icon */
-	--mdb-icon-stroke: var(--mdb-color);
+	--mdb-icon-color: var(--mdb-color);
 	--mdb-icon-stroke-width: 2px;
 
-	/* Navigation/Navbar */
+	/* Navigation */
 	--mdb-navigation-bar-height: 64px;
+	--mdb-navigation-sidebar-padding: 8px;
 }
 
 /* set some defaults */
@@ -59,6 +61,7 @@ body.dark {
 	/* general */
 	--mdb-shadow-color: #000000;
 	--mdb-border-color: #404048;
+	--mdb-border-color-alt: #303038;
 	--mdb-background-color: #08080a;
 	--mdb-background-color-alt: #202028;
 	--mdb-color: #f0f0f0;
@@ -69,16 +72,19 @@ body.dark {
 	--mdb-button-border-color: #404048;
 	--mdb-button-hover-color: #505058;
 	--mdb-button-active-color: #303038;
-	/* Button.nav */
-	--mdb-button-nav-color: var(--mdb-color);
-	--mdb-button-nav-idle-color: var(--mdb-background-color);
-	--mdb-button-nav-border-color: #282830;
-	--mdb-button-nav-hover-color: #303038;
-	--mdb-button-nav-active-color: #202028;
+	/* Button.transparent */
+	--mdb-button-transparent-color: var(--mdb-color);
+	--mdb-button-transparent-idle-color: var(--mdb-background-color);
+	--mdb-button-transparent-border-color: #282830;
+	--mdb-button-transparent-hover-color: #303038;
+	--mdb-button-transparent-active-color: #202028;
 	/* Button.primary */
 	--mdb-button-primary-color: var(--mdb-color);
 	--mdb-button-primary-idle-color: #3458f8;
 	--mdb-button-primary-border-color: #3860f8;
 	--mdb-button-primary-hover-color: #6080ff;
 	--mdb-button-primary-active-color: #2848f0;
+
+	/* Icon */
+	--mdb-icon-color: var(--mdb-color);
 }
