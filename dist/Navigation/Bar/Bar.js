@@ -20,8 +20,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * - Leading elements (usually icon, icon and title, or just title)
  * @param {array} props.trailing
  * - Trailing elements (usually page status information)
- * @param {boolean} props.compress
- * - Whether to compress the navigation bar or not
  * @param {array} props.children - Child elements of Bar
  */
 function Bar(props) {
@@ -29,7 +27,6 @@ function Bar(props) {
     align,
     leading,
     trailing,
-    compress,
     children
   } = props;
   return /*#__PURE__*/_react.default.createElement("div", {
@@ -42,19 +39,18 @@ function Bar(props) {
   }, /*#__PURE__*/_react.default.createElement(Flex.Container, {
     flow: "row nowrap",
     justifyContent: "flex-start",
-    alignItems: "center"
-  }, leading, align === 'left' && !compress ? children : []), compress ? /*#__PURE__*/_react.default.createElement(_Dropdown.default, {
-    className: "transparent large icon",
-    align: "navigation-bar-stretch",
-    icon: "hamburger"
-  }, children, /*#__PURE__*/_react.default.createElement("hr", null), trailing) : /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, !align || align === 'center' ? /*#__PURE__*/_react.default.createElement(Flex.Container, {
+    alignItems: "center",
+    gap: "4px"
+  }, leading, align === 'left' ? children : []), !align || align === 'center' ? /*#__PURE__*/_react.default.createElement(Flex.Container, {
     flow: "row nowrap",
     justifyContent: "center",
     alignItems: "center",
+    gap: "4px",
     className: "mdb-navigation-bar-flex-center"
   }, children) : [], /*#__PURE__*/_react.default.createElement(Flex.Container, {
     flow: "row nowrap",
     justifyContent: "flex-end",
-    alignItems: "center"
-  }, align === 'right' ? children : [], trailing))));
+    alignItems: "center",
+    gap: "4px"
+  }, align === 'right' ? children : [], trailing)));
 }

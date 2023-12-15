@@ -30,6 +30,8 @@ function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; 
  * - Whether to be dropped down initially or not
  * @param {boolean} props.isStaticDropdown
  * - Whether to display dropdown items statically or not
+ * @param {string} props.flexContainerStyle
+ * - Additional styles (for the Flex.Container)
  * @param {array} props.children - Child elements of Dropdown
  */
 function Dropdown(props) {
@@ -43,6 +45,7 @@ function Dropdown(props) {
     align,
     isDroppedDownInitially,
     isStaticDropdown,
+    flexContainerStyle,
     children
   } = props;
   const [isDroppedDown, setIsDroppedDown] = (0, _react.useState)(!!isDroppedDownInitially);
@@ -74,6 +77,11 @@ function Dropdown(props) {
     flow: "column nowrap",
     justifyContent: "flex-start",
     alignItems: "stretch",
-    className: (0, _helpers.classList)(['mdb-dropdown-flex', align || 'center', isDroppedDown ? '' : 'hidden', isStaticDropdown ? 'static' : ''])
+    gap: "4px",
+    className: (0, _helpers.classList)(['mdb-dropdown-flex', align || 'center', isDroppedDown ? '' : 'hidden', isStaticDropdown ? 'static' : '']),
+    style: {
+      marginTop: isStaticDropdown ? '4px' : undefined,
+      ...flexContainerStyle
+    }
   }, children));
 }

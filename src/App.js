@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-//import SyntaxHighlighter from 'react-syntax-highlighter';
-//import { obsidian } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import {
   Button,
   Dropdown,
@@ -12,18 +10,6 @@ import {
 
 const isMobileDeviceQuery = '(max-width: 880px)';
 const preferSidebarQuery = '(min-width: 1080px)';
-
-/*
-function Code(props) {
-  const { code } = props;
-
-  return (
-    <SyntaxHighlighter language='javascript' style={obsidian}>
-      {code}
-    </SyntaxHighlighter>
-  );
-}
-*/
 
 export default function App() {
   const [currentTheme, setCurrentTheme] = useState('');
@@ -111,90 +97,118 @@ export default function App() {
   const main = (
     <>
       <p>Buttons</p>
-      <Button className='large icon'><Icon.Sun /></Button>
-      <Button className='large'>
-        <Icon.Sun />
-        Button
-      </Button>
-      <Button className='large'>Button</Button>
-      <Button className='icon'><Icon.Sun /></Button>
-      <Button>
-        <Icon.Sun />
-        Button
-      </Button>
-      <Button>Button</Button>
-      <Button className='small icon'><Icon.Sun /></Button>
-      <Button className='small'>
-        <Icon.Sun />
-        Button
-      </Button>
-      <Button className='small'>Button</Button>
-      <br />
-      <Button className='primary large icon'><Icon.Sun /></Button>
-      <Button className='primary large'>
-        <Icon.Sun />
-        Button
-      </Button>
-      <Button className='primary large'>Button</Button>
-      <Button className='primary icon'><Icon.Sun /></Button>
-      <Button className='primary'>
-        <Icon.Sun />
-        Button
-      </Button>
-      <Button className='primary'>Button</Button>
-      <Button className='primary small icon'><Icon.Sun /></Button>
-      <Button className='primary small'>
-        <Icon.Sun />
-        Button
-      </Button>
-      <Button className='primary small'>Button</Button>
-      <br />
-      <Button className='transparent large icon'><Icon.Sun /></Button>
-      <Button className='transparent large'>
-        <Icon.Sun />
-        Button
-      </Button>
-      <Button className='transparent large'>Button</Button>
-      <Button className='transparent icon'><Icon.Sun /></Button>
-      <Button className='transparent'>
-        <Icon.Sun />
-        Button
-      </Button>
-      <Button className='transparent'>Button</Button>
-      <Button className='transparent small icon'><Icon.Sun /></Button>
-      <Button className='transparent small'>
-        <Icon.Sun />
-        Button
-      </Button>
-      <Button className='transparent small'>Button</Button>
-      <br />
+      <Flex.Container
+        flow='row wrap'
+        alignItems='center'
+        gap='4px'
+        style={{ marginBottom: '4px' }}
+      >
+        <Button className='large icon'><Icon.Sun /></Button>
+        <Button className='large'>
+          <Icon.Sun />
+          Button
+        </Button>
+        <Button className='large'>Button</Button>
+        <Button className='icon'><Icon.Sun /></Button>
+        <Button>
+          <Icon.Sun />
+          Button
+        </Button>
+        <Button>Button</Button>
+        <Button className='small icon'><Icon.Sun /></Button>
+        <Button className='small'>
+          <Icon.Sun />
+          Button
+        </Button>
+        <Button className='small'>Button</Button>
+      </Flex.Container>
+      <Flex.Container
+        flow='row wrap'
+        alignItems='center'
+        gap='4px'
+        style={{ marginBottom: '4px' }}
+      >
+        <Button className='primary large icon'><Icon.Sun /></Button>
+        <Button className='primary large'>
+          <Icon.Sun />
+          Button
+        </Button>
+        <Button className='primary large'>Button</Button>
+        <Button className='primary icon'><Icon.Sun /></Button>
+        <Button className='primary'>
+          <Icon.Sun />
+          Button
+        </Button>
+        <Button className='primary'>Button</Button>
+        <Button className='primary small icon'><Icon.Sun /></Button>
+        <Button className='primary small'>
+          <Icon.Sun />
+          Button
+        </Button>
+        <Button className='primary small'>Button</Button>
+      </Flex.Container>
+      <Flex.Container
+        flow='row wrap'
+        alignItems='center'
+        gap='4px'
+        style={{ marginBottom: '4px' }}
+      >
+        <Button className='transparent large icon'><Icon.Sun /></Button>
+        <Button className='transparent large'>
+          <Icon.Sun />
+          Button
+        </Button>
+        <Button className='transparent large'>Button</Button>
+        <Button className='transparent icon'><Icon.Sun /></Button>
+        <Button className='transparent'>
+          <Icon.Sun />
+          Button
+        </Button>
+        <Button className='transparent'>Button</Button>
+        <Button className='transparent small icon'><Icon.Sun /></Button>
+        <Button className='transparent small'>
+          <Icon.Sun />
+          Button
+        </Button>
+        <Button className='transparent small'>Button</Button>
+      </Flex.Container>
       <p>Dropdowns</p>
-      <Dropdown className='icon' icon='hamburger' align='left'>
-        <Button>Button</Button>
-      </Dropdown>
-      <br />
-      <Dropdown className='large' text='Dropdown' align='left'>
-        <Button>Button</Button>
-      </Dropdown>
-      <br />
-      <Dropdown
-        className='primary'
-        icon='arrow'
-        text='Dropdown'
-        align='left'
+      <Flex.Container
+        flow='row wrap'
+        alignItems='center'
+        gap='4px'
+        style={{ marginBottom: '4px' }}
       >
-        <Button>Button</Button>
-      </Dropdown>
-      <br />
-      <Dropdown
-        className='transparent small'
-        icon='arrow'
-        text='Dropdown'
-        align='left'
-      >
-        <p>Dropdown's have much the same visuals as Buttons.</p>
-        <p>Thus, the specifics won't be outlined!</p>
-      </Dropdown>
+        <Dropdown className='icon' icon='hamburger' align='left'>
+          <Button>Left-Aligned</Button>
+        </Dropdown>
+        <Dropdown className='large' text='Dropdown' align='center'>
+          <Button>Center-Aligned</Button>
+        </Dropdown>
+        <Dropdown className='primary small' text='Dropdown' align='right'>
+          <Button>Right-Aligned</Button>
+        </Dropdown>
+        <Dropdown
+          className='primary'
+          icon='arrow'
+          text='Dropdown'
+          align='center'
+        >
+          <Button className='small'>Button One</Button>
+          <Button className='small'>Button Two</Button>
+          <Button className='small'>Button Three</Button>
+          <Button className='primary small'>Another one!</Button>
+        </Dropdown>
+        <Dropdown
+          className='transparent small'
+          icon='arrow'
+          text='Dropdown'
+          align='left'
+        >
+          <p>Dropdown's have much the same visuals as Buttons.</p>
+          <p>Thus, the specifics won't be outlined!</p>
+        </Dropdown>
+      </Flex.Container>
       <p>Icons</p>
       <p>
         <Icon.Arrow />
@@ -260,13 +274,37 @@ export default function App() {
 
   return (
     <>
-      <Navigation.Bar
-        leading={leading}
-        trailing={trailing}
-        compress={isMobileDevice}
-      >
-        {menu}
-      </Navigation.Bar>
+      {isMobileDevice ? (
+        <Navigation.Bar
+          leading={(
+            <Dropdown
+              className='large transparent icon'
+              icon='hamburger'
+              flexContainerStyle={{
+                position: 'fixed',
+                top: 'var(--mdb-navigation-bar-height)',
+                right: '0',
+                left: '0',
+                transform: 'none'
+              }}
+            >
+              {menu}
+              <hr />
+              {trailing}
+            </Dropdown>
+          )}
+        >
+          {leading}
+        </Navigation.Bar>
+      ) : (
+        <Navigation.Bar
+          leading={leading}
+          trailing={trailing}
+          compress={isMobileDevice}
+        >
+          {menu}
+        </Navigation.Bar>
+      )}
       <div
         style={{
           margin: 'auto',

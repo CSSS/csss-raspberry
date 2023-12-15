@@ -23,6 +23,7 @@ function Sidebar(props) {
     flow: "column nowrap",
     justifyContent: "flex-start",
     alignItems: "stretch",
+    gap: "4px",
     className: "mdb-navigation-sidebar"
   }, children);
 }
