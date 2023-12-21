@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = WhiteBullet;
+exports.Bullet = Bullet;
 var _react = _interopRequireDefault(require("react"));
 var _helpers = require("../helpers");
 require("./Icon.css");
@@ -14,7 +14,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * @param {string} props.className - Additional class(es) for SVG icon
  * @param {string} props.style - Additional styles
  */
-function WhiteBullet(props) {
+function Bullet(props) {
   const {
     className,
     style

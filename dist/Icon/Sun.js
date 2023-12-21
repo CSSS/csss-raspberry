@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = Sun;
+exports.Sun = Sun;
 var _react = _interopRequireDefault(require("react"));
 var _helpers = require("../helpers");
 require("./Icon.css");

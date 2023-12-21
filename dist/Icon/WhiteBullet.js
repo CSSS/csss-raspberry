@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = WhiteBullet;
+exports.WhiteBullet = WhiteBullet;
 var _react = _interopRequireDefault(require("react"));
 var _helpers = require("../helpers");
 require("./Icon.css");

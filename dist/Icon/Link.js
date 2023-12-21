@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = Link;
+exports.Link = Link;
 var _react = _interopRequireDefault(require("react"));
 var _helpers = require("../helpers");
 require("./Icon.css");
