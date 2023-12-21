@@ -9,7 +9,7 @@ var _helpers = require("../helpers");
 require("./Icon.css");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 /**
- * Option (rightwards arrow) icon.
+ * Photographic film icon.
  * @param {object} props
  * @param {string} props.className - Additional class(es) for SVG icon
  * @param {string} props.style - Additional styles
