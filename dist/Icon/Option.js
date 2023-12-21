@@ -12,10 +12,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * Option (rightwards arrow) icon.
  * @param {object} props
  * @param {string} props.className - Additional class(es) for SVG icon
+ * @param {string} props.style - Additional styles
  */
 function Option(props) {
   const {
-    className
+    className,
+    style
   } = props;
   return /*#__PURE__*/_react.default.createElement("svg", {
     className: (0, _helpers.classList)(['mdb-icon', className || '']),
@@ -25,7 +27,8 @@ function Option(props) {
     x: "0px",
     y: "0px",
     viewBox: "0 0 32 32",
-    xmlSpace: "preserve"
+    xmlSpace: "preserve",
+    style: style
   }, /*#__PURE__*/_react.default.createElement("polyline", {
     points: "20,8 28,16 20,24 "
   }), /*#__PURE__*/_react.default.createElement("path", {
