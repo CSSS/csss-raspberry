@@ -5,7 +5,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = Bar;
 var _react = _interopRequireDefault(require("react"));
-var _Dropdown = _interopRequireDefault(require("../../Dropdown"));
 var Flex = _interopRequireWildcard(require("../../Flex"));
 require("./Bar.css");
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function (e) { return e ? t : r; })(e); }

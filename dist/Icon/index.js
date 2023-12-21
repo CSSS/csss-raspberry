@@ -21,6 +21,12 @@ Object.defineProperty(exports, "Cross", {
     return _Cross.default;
   }
 });
+Object.defineProperty(exports, "Film", {
+  enumerable: true,
+  get: function () {
+    return _Film.default;
+  }
+});
 Object.defineProperty(exports, "Hamburger", {
   enumerable: true,
   get: function () {
@@ -60,6 +66,7 @@ Object.defineProperty(exports, "WhiteBullet", {
 var _Arrow = _interopRequireDefault(require("./Arrow"));
 var _Bullet = _interopRequireDefault(require("./Bullet"));
 var _Cross = _interopRequireDefault(require("./Cross"));
+var _Film = _interopRequireDefault(require("./Film"));
 var _Hamburger = _interopRequireDefault(require("./Hamburger"));
 var _Link = _interopRequireDefault(require("./Link"));
 var _Moon = _interopRequireDefault(require("./Moon"));

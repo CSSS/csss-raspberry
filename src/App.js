@@ -214,6 +214,7 @@ export default function App() {
         <Icon.Arrow />
         <Icon.Bullet />
         <Icon.Cross />
+        <Icon.Film />
         <Icon.Hamburger />
         <Icon.Link />
         <Icon.Moon />

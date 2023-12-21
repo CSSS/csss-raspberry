@@ -18,4 +18,9 @@
 	fill: var(--mdb-icon-color);
 	stroke: none;
 	stroke-width: var(--mdb-icon-stroke-width);
-} 
+}
+
+.mdb-icon.mdb-icon-film > path {
+	fill: var(--mdb-icon-color);
+	stroke: none;
+}
