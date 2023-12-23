@@ -19,6 +19,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * @param {string} props.area - Grid area name
  * @param {object} props.style - Additional styles
  * @param {string} props.className - Additional classes
+ * @param {function} props.onClick - Function to run on click of item
  * @param {array} props.children - Child elements of Item
  */
 function Item(props) {
@@ -32,6 +33,7 @@ function Item(props) {
     area,
     style,
     className,
+    onClick,
     children
   } = props;
   const flexStyle = {
@@ -46,6 +48,7 @@ function Item(props) {
   };
   return /*#__PURE__*/_react.default.createElement("div", {
     style: flexStyle,
-    className: className
+    className: className,
+    onClick: onClick
   }, children);
 }
