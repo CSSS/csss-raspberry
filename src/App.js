@@ -21,6 +21,8 @@ export default function App() {
     helpers.checkMediaQuery(preferSidebarQuery)
   );
 
+  console.log(Object.keys(Icon));
+
   // function called by toggle theme button
   function toggleTheme() {
     setTheme(theme === 'dark' ? '' : 'dark');
@@ -214,11 +216,13 @@ export default function App() {
         <Icon.Arrow />
         <Icon.Bullet />
         <Icon.Cross />
+        <Icon.Expand />
         <Icon.Film />
         <Icon.Hamburger />
         <Icon.Link />
         <Icon.Moon />
         <Icon.Option />
+        <Icon.Shrink />
         <Icon.Sun />
         <Icon.WhiteBullet />
       </p>

@@ -36,6 +36,17 @@ Object.keys(_Cross).forEach(function (key) {
     }
   });
 });
+var _Expand = require("./Expand");
+Object.keys(_Expand).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _Expand[key]) return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _Expand[key];
+    }
+  });
+});
 var _Film = require("./Film");
 Object.keys(_Film).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -88,6 +99,17 @@ Object.keys(_Option).forEach(function (key) {
     enumerable: true,
     get: function () {
       return _Option[key];
+    }
+  });
+});
+var _Shrink = require("./Shrink");
+Object.keys(_Shrink).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _Shrink[key]) return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _Shrink[key];
     }
   });
 });
