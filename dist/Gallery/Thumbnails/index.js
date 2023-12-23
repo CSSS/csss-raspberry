@@ -3,14 +3,14 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var _Dropdown = require("./Dropdown");
-Object.keys(_Dropdown).forEach(function (key) {
+var _Thumbnails = require("./Thumbnails");
+Object.keys(_Thumbnails).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
-  if (key in exports && exports[key] === _Dropdown[key]) return;
+  if (key in exports && exports[key] === _Thumbnails[key]) return;
   Object.defineProperty(exports, key, {
     enumerable: true,
     get: function () {
-      return _Dropdown[key];
+      return _Thumbnails[key];
     }
   });
 });

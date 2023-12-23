@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = Button;
+exports.Button = Button;
 var _react = _interopRequireWildcard(require("react"));
 var _helpers = require("../helpers");
 require("./Button.css");

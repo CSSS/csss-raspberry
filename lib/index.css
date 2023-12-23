@@ -16,6 +16,7 @@
 	--mdb-background-color: #ffffff;
 	--mdb-background-color-alt: #f0f0f0;
 	--mdb-color: #080808;
+	--mdb-color-alt: #808088;
 
 	/* Button */
 	--mdb-button-color: var(--mdb-color);
@@ -65,6 +66,7 @@ body.dark {
 	--mdb-background-color: #08080a;
 	--mdb-background-color-alt: #202028;
 	--mdb-color: #f0f0f0;
+	--mdb-color-alt: #808088;
 
 	/* Button */
 	--mdb-button-color: var(--mdb-color);
