@@ -36,6 +36,17 @@ Object.keys(_Cross).forEach(function (key) {
     }
   });
 });
+var _Email = require("./Email");
+Object.keys(_Email).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _Email[key]) return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _Email[key];
+    }
+  });
+});
 var _Expand = require("./Expand");
 Object.keys(_Expand).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;

@@ -5,10 +5,11 @@
 	enable-background: new 0 0 32 32;
 }
 
-.mdb-icon > polyline,
+.mdb-icon > circle,
 .mdb-icon > line,
 .mdb-icon > path,
-.mdb-icon > circle {
+.mdb-icon > polyline,
+.mdb-icon > rect {
 	fill: none;
 	stroke: var(--mdb-icon-color);
 	stroke-width: var(--mdb-icon-stroke-width);
