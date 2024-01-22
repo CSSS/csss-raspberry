@@ -1,0 +1,34 @@
+.mdb-gallery-slideshow {
+	position: relative;
+	width: 512px;
+	height: 256px;
+}
+
+.mdb-gallery-slideshow img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.mdb-gallery-slideshow .controls {
+	position: absolute;
+	bottom: 8px;
+	left: 50%;
+	transform: translateX(-50%);
+	border-radius: 8px;
+	padding: 4px;
+	background-color: #000000a0;
+	color: white;
+}
+
+.mdb-gallery-slideshow .controls .mdb-button:hover {
+	background-color: #80808080;
+}
+
+.mdb-gallery-slideshow .controls .mdb-button:hover:active {
+	background-color: #80808080;
+}
+
+.mdb-gallery-slideshow .controls .mdb-icon {
+	--mdb-icon-color: white;
+}
