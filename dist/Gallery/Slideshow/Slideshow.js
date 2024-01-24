@@ -34,6 +34,7 @@ function Slideshow(props) {
     className,
     style
   } = props;
+  const [intervalId, setIntervalId] = (0, _react.useState)(null);
   const [selected, setSelected] = (0, _react.useState)(0);
   const [photo, setPhoto] = (0, _react.useState)(null);
   function slide() {
@@ -42,6 +43,13 @@ function Slideshow(props) {
       if (newSelected >= photos.length) newSelected = 0;
       return newSelected;
     });
+  }
+  function startSliding() {
+    setIntervalId(setInterval(slide, pace || 5000));
+  }
+  function stopSliding() {
+    clearInterval(intervalId);
+    setIntervalId(null);
   }
   (0, _react.useEffect)(() => {
     setPhoto(thumbnails[selected]);
@@ -53,11 +61,8 @@ function Slideshow(props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selected]);
   (0, _react.useEffect)(() => {
-    let interval;
-    if (autoSlide === undefined || autoSlide)
-      // 5 seconds interval is the default
-      interval = setInterval(slide, pace || 5000);
-    return () => clearInterval(interval);
+    if (autoSlide === undefined || autoSlide) startSliding();
+    return stopSliding;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const controls = /*#__PURE__*/_react.default.createElement(Flex.Container, {
@@ -65,7 +70,15 @@ function Slideshow(props) {
     alignItems: "center",
     gap: "4px",
     className: "controls"
-  }, showControls ? /*#__PURE__*/_react.default.createElement(_Button.Button, {
+  }, showControls && (autoSlide === undefined || autoSlide) ? /*#__PURE__*/_react.default.createElement(_Button.Button, {
+    className: "small transparent icon",
+    style: {
+      padding: '6px'
+    },
+    onClick: () => {
+      intervalId === null ? startSliding() : stopSliding();
+    }
+  }, intervalId === null ? /*#__PURE__*/_react.default.createElement(Icon.Play, null) : /*#__PURE__*/_react.default.createElement(Icon.Pause, null)) : [], showControls ? /*#__PURE__*/_react.default.createElement(_Button.Button, {
     className: "small transparent icon",
     style: {
       padding: '6px'

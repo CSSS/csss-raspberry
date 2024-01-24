@@ -8,6 +8,7 @@
 .mdb-icon > circle,
 .mdb-icon > line,
 .mdb-icon > path,
+.mdb-icon > polygon,
 .mdb-icon > polyline,
 .mdb-icon > rect {
 	fill: none;
@@ -15,7 +16,9 @@
 	stroke-width: var(--mdb-icon-stroke-width);
 }
 
-.mdb-icon.fill > circle {
+.mdb-icon.fill > circle,
+.mdb-icon.fill > path,
+.mdb-icon.fill > rect {
 	fill: var(--mdb-icon-color);
 	stroke: none;
 	stroke-width: var(--mdb-icon-stroke-width);

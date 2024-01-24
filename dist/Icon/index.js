@@ -113,6 +113,28 @@ Object.keys(_Option).forEach(function (key) {
     }
   });
 });
+var _Pause = require("./Pause");
+Object.keys(_Pause).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _Pause[key]) return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _Pause[key];
+    }
+  });
+});
+var _Play = require("./Play");
+Object.keys(_Play).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _Play[key]) return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _Play[key];
+    }
+  });
+});
 var _Shrink = require("./Shrink");
 Object.keys(_Shrink).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
