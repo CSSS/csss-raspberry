@@ -221,6 +221,8 @@ export default function App() {
         <Icon.Link />
         <Icon.Moon />
         <Icon.Option />
+        <Icon.Pause />
+        <Icon.Play />
         <Icon.Shrink />
         <Icon.Sun />
         <Icon.WhiteBullet />
