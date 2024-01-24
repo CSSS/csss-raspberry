@@ -21,14 +21,14 @@
 	color: white;
 }
 
-.mdb-gallery-slideshow .controls .mdb-button:hover {
+.mdb-gallery-slideshow .controls .mdb-button:not(.disabled):hover {
 	background-color: #80808080;
 }
 
-.mdb-gallery-slideshow .controls .mdb-button:hover:active {
+.mdb-gallery-slideshow .controls .mdb-button:not(.disabled):hover:active {
 	background-color: #80808080;
 }
 
-.mdb-gallery-slideshow .controls .mdb-icon {
+.mdb-gallery-slideshow .controls .mdb-button:not(.disabled) .mdb-icon {
 	--mdb-icon-color: white;
 }

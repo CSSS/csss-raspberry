@@ -3,6 +3,7 @@ import {
   Button,
   Dropdown,
   Flex,
+  Gallery,
   Icon,
   Navigation,
   helpers
@@ -10,6 +11,12 @@ import {
 
 const isMobileDeviceQuery = '(max-width: 880px)';
 const preferSidebarQuery = '(min-width: 1080px)';
+
+const photos = [
+  'https://random.dog/9e15ada8-a5cc-4bbf-94b0-a87dd1816c4a.png',
+  'https://random.dog/43845f5b-607a-4774-a171-bb878bc408e3.JPG',
+  'https://random.dog/813c353e-7c6b-45d9-a756-af99878133d7.jpg'
+];
 
 export default function App() {
   const [currentTheme, setCurrentTheme] = useState('');
@@ -227,6 +234,20 @@ export default function App() {
         <Icon.Sun />
         <Icon.WhiteBullet />
       </p>
+      <p>Gallery.Thumbnails</p>
+      <Gallery.Thumbnails
+        photos={photos}
+        thumbnails={photos}
+        maxWidth={512}
+        maxHeight={512}
+      />
+      <p>Gallery.Slideshow</p>
+      <Gallery.Slideshow
+        photos={photos}
+        thumbnails={photos}
+        showControls={true}
+        showCounter={true}
+      />
     </>
   );
 

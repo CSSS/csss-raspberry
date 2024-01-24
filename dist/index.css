@@ -20,18 +20,21 @@
 
 	/* Button */
 	--mdb-button-color: var(--mdb-color);
+	--mdb-button-color-disabled: var(--mdb-color-alt);
 	--mdb-button-idle-color: #e0e0e0;
 	--mdb-button-border-color: #c0c0c0;
 	--mdb-button-hover-color: #e8e8e8;
 	--mdb-button-active-color: #d8d8d8;
 	/* Button.transparent */
 	--mdb-button-transparent-color: var(--mdb-color);
+	--mdb-button-transparent-color-disabled: var(--mdb-color-alt);
 	--mdb-button-transparent-idle-color: var(--mdb-background-color);
 	--mdb-button-transparent-border-color: #c0c0c0;
 	--mdb-button-transparent-hover-color: #e8e8e8;
 	--mdb-button-transparent-active-color: #d8d8d8;
 	/* Button.primary */
 	--mdb-button-primary-color: var(--mdb-background-color);
+	--mdb-button-primary-color-disabled: var(--mdb-color-alt);
 	--mdb-button-primary-idle-color: #3458f8;
 	--mdb-button-primary-border-color: #2030e0;
 	--mdb-button-primary-hover-color: #6080ff;

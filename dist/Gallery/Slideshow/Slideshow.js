@@ -19,8 +19,8 @@ function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; 
  * @param {array} props.thumbnails - File paths to photo thumbnails
  * @param {boolean} props.showControls - Whether to show or not show controls
  * @param {boolean} props.showCounter - Whether to show or not show the counter
- * @param {boolean} props.autoSlide
- *  - Whether to slide through photos automatically
+ * @param {boolean} props.noSlide
+ *  - Whether to not slide through photos automatically
  * @param {integer} props.pace - Pace to slide through photos (ms)
  * @param {object} props.className - Additional classes
  * @param {object} props.style - Additional styles
@@ -31,32 +31,31 @@ function Slideshow(props) {
     thumbnails,
     showControls,
     showCounter,
-    autoSlide,
+    noSlide,
     pace,
     className,
     style
   } = props;
-  const [intervalId, setIntervalId] = (0, _react.useState)(null);
   const [selected, setSelected] = (0, _react.useState)(0);
   const [photo, setPhoto] = (0, _react.useState)(null);
+  const [playing, setPlaying] = (0, _react.useState)(true);
   function slide() {
-    setSelected(prevSelected => {
-      let newSelected = prevSelected + 1;
-      if (newSelected >= photos.length) newSelected = 0;
-      return newSelected;
+    setPlaying(prevPlaying => {
+      // only slide if playing
+      if (prevPlaying) {
+        setSelected(prevSelected => {
+          let newSelected = prevSelected + 1;
+          if (newSelected >= photos.length) newSelected = 0;
+          return newSelected;
+        });
+      }
+
+      // don't update playing
+      return prevPlaying;
     });
   }
-  function startSliding() {
-    setIntervalId(prevIntervalId => {
-      if (prevIntervalId !== null) clearInterval(prevIntervalId);
-      return setInterval(slide, pace || 5000);
-    });
-  }
-  function stopSliding() {
-    setIntervalId(prevIntervalId => {
-      if (prevIntervalId !== null) clearInterval(prevIntervalId);
-      return null;
-    });
+  function togglePlaying() {
+    setPlaying(!noSlide && !playing ? true : false);
   }
   (0, _react.useEffect)(() => {
     setPhoto(thumbnails[selected]);
@@ -68,8 +67,11 @@ function Slideshow(props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selected]);
   (0, _react.useEffect)(() => {
-    if (autoSlide === undefined || autoSlide) startSliding();
-    return stopSliding;
+    let intervalId = null;
+    if (!noSlide) intervalId = setInterval(slide, pace || 5000);
+    return () => {
+      if (intervalId !== null) clearInterval(intervalId);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const controls = /*#__PURE__*/_react.default.createElement(Flex.Container, {
@@ -77,20 +79,19 @@ function Slideshow(props) {
     alignItems: "center",
     gap: "4px",
     className: "controls"
-  }, showControls && (autoSlide === undefined || autoSlide) ? /*#__PURE__*/_react.default.createElement(_Button.Button, {
+  }, showControls && !noSlide ? /*#__PURE__*/_react.default.createElement(_Button.Button, {
     className: "small transparent icon",
     style: {
       padding: '6px'
     },
-    onClick: () => {
-      intervalId === null ? startSliding() : stopSliding();
-    }
-  }, intervalId === null ? /*#__PURE__*/_react.default.createElement(Icon.Play, null) : /*#__PURE__*/_react.default.createElement(Icon.Pause, null)) : [], showControls ? /*#__PURE__*/_react.default.createElement(_Button.Button, {
-    className: "small transparent icon",
+    onClick: togglePlaying
+  }, playing ? /*#__PURE__*/_react.default.createElement(Icon.Pause, null) : /*#__PURE__*/_react.default.createElement(Icon.Play, null)) : [], showControls ? /*#__PURE__*/_react.default.createElement(_Button.Button, {
+    className: (0, _helpers.classList)(['small transparent icon', playing ? 'disabled' : '']),
     style: {
       padding: '6px'
     },
     onClick: () => {
+      if (playing) return;
       setSelected(selected > 0 ? selected - 1 : selected);
     }
   }, /*#__PURE__*/_react.default.createElement(Icon.Arrow, {
@@ -103,11 +104,12 @@ function Slideshow(props) {
       fontSize: '10pt'
     }
   }, selected + 1, " / ", photos.length) : [], showControls ? /*#__PURE__*/_react.default.createElement(_Button.Button, {
-    className: "small transparent icon",
+    className: (0, _helpers.classList)(['small transparent icon', playing ? 'disabled' : '']),
     style: {
       padding: '6px'
     },
     onClick: () => {
+      if (playing) return;
       setSelected(selected < photos.length - 1 ? selected + 1 : selected);
     }
   }, /*#__PURE__*/_react.default.createElement(Icon.Arrow, {
