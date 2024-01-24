@@ -18,6 +18,7 @@ function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; 
  * @param {array} props.photos - File paths to full-resolution photos
  * @param {array} props.thumbnails - File paths to photo thumbnails
  * @param {boolean} props.showControls - Whether to show or not show controls
+ * @param {boolean} props.showCounter - Whether to show or not show the counter
  * @param {boolean} props.autoSlide
  *  - Whether to slide through photos automatically
  * @param {integer} props.pace - Pace to slide through photos (ms)
@@ -29,6 +30,7 @@ function Slideshow(props) {
     photos,
     thumbnails,
     showControls,
+    showCounter,
     autoSlide,
     pace,
     className,
@@ -45,11 +47,16 @@ function Slideshow(props) {
     });
   }
   function startSliding() {
-    setIntervalId(setInterval(slide, pace || 5000));
+    setIntervalId(prevIntervalId => {
+      if (prevIntervalId !== null) clearInterval(prevIntervalId);
+      return setInterval(slide, pace || 5000);
+    });
   }
   function stopSliding() {
-    clearInterval(intervalId);
-    setIntervalId(null);
+    setIntervalId(prevIntervalId => {
+      if (prevIntervalId !== null) clearInterval(prevIntervalId);
+      return null;
+    });
   }
   (0, _react.useEffect)(() => {
     setPhoto(thumbnails[selected]);
@@ -90,12 +97,12 @@ function Slideshow(props) {
     style: {
       transform: 'rotate(90deg)'
     }
-  })) : [], /*#__PURE__*/_react.default.createElement("p", {
+  })) : [], showCounter ? /*#__PURE__*/_react.default.createElement("p", {
     style: {
       margin: '0 8px',
       fontSize: '10pt'
     }
-  }, selected + 1, " / ", photos.length), showControls ? /*#__PURE__*/_react.default.createElement(_Button.Button, {
+  }, selected + 1, " / ", photos.length) : [], showControls ? /*#__PURE__*/_react.default.createElement(_Button.Button, {
     className: "small transparent icon",
     style: {
       padding: '6px'
@@ -114,5 +121,5 @@ function Slideshow(props) {
   }, /*#__PURE__*/_react.default.createElement("img", {
     src: photo,
     alt: selected
-  }), controls);
+  }), showControls || showCounter ? controls : []);
 }
