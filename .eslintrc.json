@@ -1,0 +1,17 @@
+{
+  "extends": [
+    "semistandard",
+    "react-app",
+    "react-app/jest"
+  ],
+  "rules": {
+    "indent": ["error", 2],
+    "semi": ["error", "always"],
+    "quotes": ["error", "single", { "avoidEscape": true }],
+    "max-len": ["error", 80],
+    "space-before-function-paren": ["off"],
+    "multiline-ternary": ["off"],
+    "operator-linebreak": ["off"],
+    "space-unary-ops": ["off"]
+  }
+}

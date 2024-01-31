@@ -1,61 +1,33 @@
 {
-  "name": "mdb-react-components",
+  "name": "nakl",
   "version": "0.1.0",
   "license": "AGPL-3.0-or-later",
-  "author": "Micah Baker <mdb15@sfu.ca> (https://micahdb.com)",
-  "homepage": "https://micahdb.com/mdb-react-components",
+  "author": "SFU CSSS <csss@sfu.ca> (https://sfucsss.org)",
   "private": true,
   "main": "dist/index.js",
-  "files": [
-    "dist",
-    "README.md",
-    "LICENSE"
-  ],
   "devDependencies": {
     "@babel/cli": "^7.23.4",
     "@babel/core": "^7.23.5",
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.23.5",
-    "gh-pages": "^6.1.0",
-    "mdb-react-components": "./dist",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1"
+    "@babel/preset-react": "^7.23.3",
+    "eslint": "^8.56.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-config-semistandard": "^17.0.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "react": "^18.2.0"
   },
   "peerDependencies": {
     "react": "^18.2.0"
   },
   "scripts": {
-    "lint": "eslint lib && eslint src",
-    "babel": "rm -Rf dist && NODE_ENV=production babel lib --out-dir dist --copy-files",
-    "start": "npm run babel && react-scripts start",
-    "build": "react-scripts build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ],
-    "rules": {
-      "indent": [
-        "error",
-        2
-      ],
-      "semi": [
-        "error",
-        "always"
-      ],
-      "quotes": [
-        "error",
-        "single"
-      ],
-      "max-len": [
-        "error",
-        80
-      ]
-    }
+    "lint": "eslint src",
+    "babel": "NODE_ENV=production babel src --out-dir dist --copy-files",
+    "prepare": "npm run babel"
   },
   "browserslist": {
     "production": [
@@ -68,9 +40,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "dependencies": {
-    "@babel/polyfill": "^7.12.1",
-    "eslint": "^8.54.0"
   }
 }
