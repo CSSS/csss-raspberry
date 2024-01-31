@@ -1,5 +1,3 @@
-# React Components
+# `nakl`: Not Another 'K'omponent Library
 
-A collection of handy React components.
-
-For documentation, please see the [example website](https://micahdb.com/mdb-react-components).
+A collection of handy React components and helper functions to be used by the website of the Computing Science Student Society of SFU.
