@@ -6,12 +6,12 @@
   ],
   "rules": {
     "indent": ["error", 2],
-    "semi": ["error", "always"],
-    "quotes": ["error", "single", { "avoidEscape": true }],
     "max-len": ["error", 80],
-    "space-before-function-paren": ["off"],
     "multiline-ternary": ["off"],
     "operator-linebreak": ["off"],
+    "quotes": ["error", "single", { "avoidEscape": true }],
+    "semi": ["error", "always"],
+    "space-before-function-paren": ["off"],
     "space-unary-ops": ["off"]
   }
 }
