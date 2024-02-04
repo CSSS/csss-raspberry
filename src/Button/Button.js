@@ -26,10 +26,10 @@ export function Button(props) {
   if (href !== undefined) {
     return (
       <a
-        className={classList(['mdb-button', className])}
+        className={classList(['csss-button', className])}
         style={{
           marginLeft: depth ?
-            `calc(${depth} * var(--mdb-button-depth-margin))`
+            `calc(${depth} * var(--csss-button-depth-margin))`
             : undefined,
           ...style
         }}
@@ -42,10 +42,10 @@ export function Button(props) {
 
   return (
     <button
-      className={classList(['mdb-button', className])}
+      className={classList(['csss-button', className])}
       style={{
         marginLeft: depth ?
-          `calc(${depth} * var(--mdb-button-depth-margin))`
+          `calc(${depth} * var(--csss-button-depth-margin))`
           : undefined,
         ...style
       }}

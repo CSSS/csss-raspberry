@@ -61,7 +61,7 @@ export function Dropdown(props) {
 
   return (
     <div
-      className='mdb-dropdown'
+      className='csss-dropdown'
       style={style}
       onBlur={e => {
         if (!e.currentTarget.contains(e.relatedTarget) && !isStaticDropdown) {
@@ -88,7 +88,7 @@ export function Dropdown(props) {
         alignItems='stretch'
         gap='4px'
         className={classList([
-          'mdb-dropdown-flex',
+          'csss-dropdown-flex',
           align || 'center',
           isDroppedDown ? '' : 'hidden',
           isStaticDropdown ? 'static' : ''

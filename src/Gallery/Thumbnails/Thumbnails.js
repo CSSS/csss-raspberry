@@ -28,7 +28,7 @@ export function Thumbnails(props) {
       src={photos[selected - 1]}
       alt={`${selected}`}
       onClick={() => setExpand(true)}
-      className='mdb-gallery-thumbnails-img'
+      className='csss-gallery-thumbnails-img'
       style={{
         maxWidth: expand ? '100%' : maxWidth,
         maxHeight: expand ? '100%' : maxHeight,
@@ -97,7 +97,7 @@ export function Thumbnails(props) {
           justifyContent='center'
           alignItems='center'
           gap={expand ? '8px' : '2px'}
-          className={expand ? 'mdb-gallery-thumbnails-flex-expand' : undefined}
+          className={expand ? 'csss-gallery-thumbnails-flex-expand' : undefined}
         >
           {expand ? (
             <Flex.Item style={{ overflow: 'hidden' }}>
@@ -107,7 +107,7 @@ export function Thumbnails(props) {
           {controls}
         </Flex.Container>
       ) : (
-        <p className='mdb-gallery-thumbnails-prompt'>
+        <p className='csss-gallery-thumbnails-prompt'>
           Click on a photo to view it.
         </p>
       )}
@@ -118,7 +118,7 @@ export function Thumbnails(props) {
             alt={`${index + 1} (Thumbnail)`}
             onClick={() => setSelected(index + 1)}
             className={classList([
-              'mdb-gallery-thumbnails-thumbnail',
+              'csss-gallery-thumbnails-thumbnail',
               selected === index + 1 ? 'selected' : ''
             ])}
           />

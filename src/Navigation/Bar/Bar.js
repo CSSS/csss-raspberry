@@ -19,12 +19,12 @@ export default function Bar(props) {
   const { align, leading, trailing, children } = props;
 
   return (
-    <div className='mdb-navigation-bar'>
+    <div className='csss-navigation-bar'>
       <Flex.Container
         flow='row nowrap'
         justifyContent='space-between'
         alignItems='center'
-        className='mdb-navigation-bar-flex'
+        className='csss-navigation-bar-flex'
       >
         <Flex.Container
           flow='row nowrap'
@@ -41,7 +41,7 @@ export default function Bar(props) {
             justifyContent='center'
             alignItems='center'
             gap='4px'
-            className='mdb-navigation-bar-flex-center'
+            className='csss-navigation-bar-flex-center'
           >
             {children}
           </Flex.Container>

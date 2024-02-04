@@ -15,7 +15,7 @@ export function Bullet(props) {
 
   return (
     <svg
-      className={classList(['mdb-icon', 'fill', className || ''])}
+      className={classList(['csss-icon', 'fill', className || ''])}
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"

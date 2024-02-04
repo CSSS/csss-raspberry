@@ -1,24 +1,24 @@
-.mdb-navigation-bar {
+.csss-navigation-bar {
 	z-index: 99;
 	position: sticky;
 	top: 0;
 	width: 100vw;
-	height: var(--mdb-navigation-bar-height);
-	border-bottom: 1px solid var(--mdb-border-color);
-	background-color: var(--mdb-background-color);
-	color: var(--mdb-color);
+	height: var(--csss-navigation-bar-height);
+	border-bottom: 1px solid var(--csss-border-color);
+	background-color: var(--csss-background-color);
+	color: var(--csss-color);
 }
 
-.mdb-navigation-bar-flex {
+.csss-navigation-bar-flex {
 	position: absolute;
 	top: 0;
 	left: 50%;
 	transform: translateX(-50%);
-	width: var(--mdb-page-width);
-	height: var(--mdb-navigation-bar-height);
+	width: var(--csss-page-width);
+	height: var(--csss-navigation-bar-height);
 }
 
-.mdb-navigation-bar-flex-center {
+.csss-navigation-bar-flex-center {
 	position: absolute;
 	top: 50%;
 	left: 50%;

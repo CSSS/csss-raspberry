@@ -76,7 +76,7 @@ export default function Container(props) {
     <div
       style={gridStyle}
       className={classList([
-        'mdb-grid-container',
+        'csss-grid-container',
         className
       ])}
     >

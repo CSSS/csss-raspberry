@@ -15,7 +15,7 @@ export function Film(props) {
 
   return (
     <svg
-      className={classList(['mdb-icon', 'mdb-icon-film', className || ''])}
+      className={classList(['csss-icon', 'csss-icon-film', className || ''])}
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"

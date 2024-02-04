@@ -145,7 +145,7 @@ export function Slideshow(props) {
 
   return (
     <div
-      className={classList(['mdb-gallery-slideshow', className])}
+      className={classList(['csss-gallery-slideshow', className])}
       style={style}
     >
       <img src={photo} alt={selected} />

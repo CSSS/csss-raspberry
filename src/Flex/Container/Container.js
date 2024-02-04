@@ -61,7 +61,7 @@ export default function Container(props) {
     <div
       style={flexStyle}
       className={classList([
-        'mdb-flex-container',
+        'csss-flex-container',
         className
       ])}
     >

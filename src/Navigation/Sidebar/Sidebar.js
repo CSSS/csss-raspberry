@@ -18,7 +18,7 @@ export default function Sidebar(props) {
       justifyContent='flex-start'
       alignItems='stretch'
       gap='4px'
-      className='mdb-navigation-sidebar'
+      className='csss-navigation-sidebar'
     >
       {children}
     </Flex.Container>

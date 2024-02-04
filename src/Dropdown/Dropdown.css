@@ -1,62 +1,62 @@
-.mdb-dropdown {
+.csss-dropdown {
 	position: relative;
 	display: inline-block;
 }
 
-.mdb-dropdown > .mdb-button {
+.csss-dropdown > .csss-button {
 	width: 100%;
 }
 
-.mdb-dropdown svg.rotate90 {
+.csss-dropdown svg.rotate90 {
 	transform: rotate(-90deg);
 }
 
-.mdb-dropdown svg.rotate180 {
+.csss-dropdown svg.rotate180 {
 	transform: rotate(180deg);
 }
 
 /* don't display the (just) text element; this is for recursive Dropdowns */
-.mdb-dropdown > p {
+.csss-dropdown > p {
 	display: none;
 }
 
-.mdb-dropdown-flex {
+.csss-dropdown-flex {
 	z-index: 99;
 	position: absolute;
 	top: 100%;
 	border-radius: 16px;
-	border: 2px solid var(--mdb-background-color);
-	box-shadow: 0 0 0 1px var(--mdb-border-color);
-	filter: drop-shadow(0 0 4px var(--mdb-shadow-color));
+	border: 2px solid var(--csss-background-color);
+	box-shadow: 0 0 0 1px var(--csss-border-color);
+	filter: drop-shadow(0 0 4px var(--csss-shadow-color));
 	padding: 8px;
-	background-color: var(--mdb-background-color-alt);
+	background-color: var(--csss-background-color-alt);
 }
 
-.mdb-dropdown-flex.hidden {
+.csss-dropdown-flex.hidden {
 	display: none;
 }
 
-.mdb-dropdown-flex.left {
+.csss-dropdown-flex.left {
 	left: 0;
 }
 
-.mdb-dropdown-flex.center {
+.csss-dropdown-flex.center {
 	left: 50%;
 	transform: translateX(-50%);
 }
 
-.mdb-dropdown-flex.right {
+.csss-dropdown-flex.right {
 	right: 0;
 }
 
-.mdb-dropdown-flex > hr {
+.csss-dropdown-flex > hr {
 	margin: 4px;
 	width: calc(100% - 16px);
 	border: none;
-	border-top: 1px solid var(--mdb-border-color);
+	border-top: 1px solid var(--csss-border-color);
 }
 
-.mdb-dropdown-flex > p {
+.csss-dropdown-flex > p {
 	margin: 8px;
 	white-space: nowrap;
 	font-size: 10pt;
@@ -66,12 +66,12 @@
 /* expand recursive Dropdowns */
 
 /* don't display the clickable button */
-.mdb-dropdown-flex .mdb-dropdown > .mdb-button {
+.csss-dropdown-flex .csss-dropdown > .csss-button {
 	display: none;
 }
 
 /* show the (just) text element */
-.mdb-dropdown-flex .mdb-dropdown > p {
+.csss-dropdown-flex .csss-dropdown > p {
 	display: block;
 	margin: 4px;
 	white-space: nowrap;
@@ -79,8 +79,8 @@
 	font-weight: 400;
 }
 
-.mdb-dropdown-flex .mdb-dropdown-flex,
-.mdb-dropdown-flex.static {
+.csss-dropdown-flex .csss-dropdown-flex,
+.csss-dropdown-flex.static {
 	z-index: auto;
 	position: static;
 	transform: none;
@@ -94,6 +94,6 @@
 }
 
 /* do not hide recursive Dropdown flexboxes */
-.mdb-dropdown-flex .mdb-dropdown-flex.hidden {
+.csss-dropdown-flex .csss-dropdown-flex.hidden {
 	display: flex;
 }
