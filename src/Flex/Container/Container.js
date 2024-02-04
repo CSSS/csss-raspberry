@@ -6,6 +6,7 @@ import './Container.css';
 /**
  * A flexbox container.
  * @param {object} props
+ * @param {string} props.id - ID of the container
  * @param {string} props.direction - Direction of flex items (row, or column)
  * @param {string} props.wrap
  * - Whether to wrap items if width is exceeded. (E.g., wrap, nowrap,
@@ -26,6 +27,7 @@ import './Container.css';
  */
 export default function Container(props) {
   const {
+    id,
     direction,
     wrap,
     flow,
@@ -59,6 +61,7 @@ export default function Container(props) {
 
   return (
     <div
+      id={id}
       style={flexStyle}
       className={classList([
         'csss-flex-container',

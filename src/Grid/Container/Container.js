@@ -6,6 +6,7 @@ import './Container.css';
 /**
  * A grid container.
  * @param {object} props
+ * @param {string} props.id - ID of the container
  * @param {string} props.columns
  * - Template for grid columns. White-space separated values, with optional
  *   names.
@@ -31,6 +32,7 @@ import './Container.css';
  */
 export default function Container(props) {
   const {
+    id,
     columns,
     rows,
     areas,
@@ -74,6 +76,7 @@ export default function Container(props) {
 
   return (
     <div
+      id={id}
       style={gridStyle}
       className={classList([
         'csss-grid-container',
