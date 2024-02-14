@@ -34,7 +34,7 @@ export function Slideshow(props) {
 
   const [selected, setSelected] = useState(0);
   const [photo, setPhoto] = useState(null);
-  const [playing, setPlaying] = useState(true);
+  const [playing, setPlaying] = useState(noSlide ? false : true);
 
   function slide() {
     setPlaying(prevPlaying => {
@@ -61,7 +61,13 @@ export function Slideshow(props) {
   }
 
   useEffect(() => {
-    setPhoto(thumbnails[selected]);
+    if (thumbnails) {
+      setPhoto(thumbnails[selected]);
+    } else {
+      setPhoto(photos[selected]);
+
+      return;
+    }
 
     // wait for the full resolution photo to load before updating photo
     const fullResPhoto = new Image();
