@@ -17,6 +17,8 @@ import './Slideshow.css';
  * @param {boolean} props.noSlide
  *  - Whether to not slide through photos automatically
  * @param {integer} props.pace - Pace to slide through photos (ms)
+ * @param {string} props.width - Width of a video source (pixels)
+ * @param {string} props.height - Height of a video source (pixels)
  * @param {object} props.className - Additional classes
  * @param {object} props.style - Additional styles
  */
@@ -28,13 +30,15 @@ export function Slideshow(props) {
     showCounter,
     noSlide,
     pace,
+    width,
+    height,
     className,
     style
   } = props;
 
   const [selected, setSelected] = useState(0);
   const [photo, setPhoto] = useState(null);
-  const [playing, setPlaying] = useState(noSlide ? false : true);
+  const [playing, setPlaying] = useState(!noSlide);
 
   function slide() {
     setPlaying(prevPlaying => {
@@ -154,7 +158,13 @@ export function Slideshow(props) {
       className={classList(['csss-gallery-slideshow', className])}
       style={style}
     >
-      <img src={photo} alt={selected} />
+      {photo && (photo.endsWith('mp4') || photo.endsWith('mov')) ? (
+        <video width={width} height={height} controls>
+          <source src={photo} />
+        </video>
+      ) : (
+        <img src={photo} alt={selected} />
+      )}
       {showControls || showCounter ? controls : []}
     </div>
   );
