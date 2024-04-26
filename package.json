@@ -12,6 +12,7 @@
     "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.23.5",
     "@babel/preset-react": "^7.23.3",
+    "csss-raspberry": "./dist",
     "eslint": "^8.56.0",
     "eslint-config-react-app": "^7.0.1",
     "eslint-config-semistandard": "^17.0.0",
@@ -19,14 +20,18 @@
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-n": "^15.7.0",
     "eslint-plugin-promise": "^6.1.1",
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.3.1",
+    "react-scripts": "^5.0.1"
   },
-  "peerDependencies": {
+  "dependencies": {
     "react": "^18.2.0"
   },
   "scripts": {
     "lint": "eslint src",
-    "babel": "NODE_ENV=production babel src --out-dir dist --copy-files",
+    "babel": "NODE_ENV=production babel lib --out-dir dist --copy-files",
+    "prestart": "npm run babel",
+    "start": "react-scripts start",
     "prepare": "npm run babel"
   },
   "browserslist": {
