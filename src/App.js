@@ -1,12 +1,27 @@
-import React from 'react';
-import { Button } from 'csss-raspberry';
+import React, { useState, useEffect } from 'react';
+import { VSCode } from 'csss-raspberry';
 
-export function App() {
+import './App.css';
+import { VSCodeGuide } from './pages/VSCodeGuide';
+
+function App() {
+  const [view, setView] = useState('');
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(window.location.search);
+
+    if (searchParams.has('view')) {
+      setView(searchParams.get('view'));
+    }
+  }, []);
+
   return (
-    <>
-      <p>Hello, devs!</p>
-      <p>Use the src/App.js file to test your components.</p>
-      <Button>This is imported from lib/</Button>
-    </>
+    <div className="app">
+      <VSCode.Navbar />
+      {/* can route using the view string with more pages */}
+      <VSCodeGuide />
+    </div>
   );
 }
+
+export default App;
