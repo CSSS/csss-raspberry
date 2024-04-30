@@ -1,48 +1,48 @@
 .csss-gallery-thumbnails-prompt {
-	margin: 0;
-	margin-right: auto;
-	line-height: 20px;
-	font-size: 10pt;
-	color: var(--csss-color-alt);
+  margin: 0;
+  margin-right: auto;
+  line-height: 20px;
+  font-size: 10pt;
+  color: var(--csss-color-alt);
 }
 
 .csss-gallery-thumbnails-img {
-	display: block;
-	border-radius: 2px;
-	border: 1px solid var(--csss-border-color);
-	object-fit: contain;
-	background-size: 100% 100%;
+  display: block;
+  border-radius: 2px;
+  border: 1px solid var(--csss-border-color);
+  object-fit: contain;
+  background-size: 100% 100%;
 }
 
 .csss-gallery-thumbnails-img:hover {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .csss-gallery-thumbnails-flex-expand {
-	position: fixed;
-	z-index: 99;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	padding: 16px;
-	background-color: #000000e0;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 16px;
+  background-color: #000000e0;
 }
 
 .csss-gallery-thumbnails-thumbnail {
-	border-radius: 1px;
-	border: 2px solid var(--csss-border-color);
-	width: min-content;
-	max-width: 48px;
-	height: min-content;
-	max-height: 48px;
-	object-fit: contain;
+  border-radius: 1px;
+  border: 2px solid var(--csss-border-color);
+  width: min-content;
+  max-width: 48px;
+  height: min-content;
+  max-height: 48px;
+  object-fit: contain;
 }
 
 .csss-gallery-thumbnails-thumbnail:hover {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .csss-gallery-thumbnails-thumbnail.selected {
-	box-shadow: 0 0 0 1px var(--csss-color);
+  box-shadow: 0 0 0 1px var(--csss-color);
 }
