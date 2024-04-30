@@ -1,29 +1,3 @@
-@font-face {
-  font-family: main;
-  src: url(./fonts/Fellix-Regular.woff2);
-}
-@font-face {
-  font-family: main2;
-  src: url(./fonts/Fellix-Medium.woff2);
-}
-@font-face {
-  font-family: main3;
-  src: url(./fonts/Fellix-Bold.woff2);
-}
-@font-face {
-  font-family: main4;
-  src: url(./fonts/Fellix-SemiBold.woff2);
-}
-@font-face {
-  font-family: main5;
-  src: url(./fonts/Fellix-Light.woff2);
-}
-
-@font-face {
-  font-family: icons;
-  src: url(./fonts/Social\ Media\ Circled.ttf);
-}
-
 html {
   background-color: #24292e;
 }
@@ -51,23 +25,28 @@ input {
 }
 
 .font-100 {
-  font-family: main5;
+  font-family: var(--csss-font-family-sans-serif), sans-serif;
+  font-weight: 100;
 }
 
 .font-200 {
-  font-family: main;
+  font-family: var(--csss-font-family-sans-serif), sans-serif;
+  font-weight: 200;
 }
 
 .font-300 {
-  font-family: main2;
+  font-family: var(--csss-font-family-sans-serif), sans-serif;
+  font-weight: 300;
 }
 
 .font-400 {
-  font-family: main4;
+  font-family: var(--csss-font-family-sans-serif), sans-serif;
+  font-weight: 400;
 }
 
 .font-500 {
-  font-family: main3;
+  font-family: var(--csss-font-family-sans-serif), sans-serif;
+  font-weight: 500;
 }
 
 .background-100 {
