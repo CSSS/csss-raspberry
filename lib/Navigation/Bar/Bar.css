@@ -1,26 +1,26 @@
 .csss-navigation-bar {
-	z-index: 99;
-	position: sticky;
-	top: 0;
-	width: 100vw;
-	height: var(--csss-navigation-bar-height);
-	border-bottom: 1px solid var(--csss-border-color);
-	background-color: var(--csss-background-color);
-	color: var(--csss-color);
+  z-index: 99;
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: var(--csss-navigation-bar-height);
+  border-bottom: 1px solid var(--csss-border-color);
+  background-color: var(--csss-background-color);
+  color: var(--csss-color);
 }
 
 .csss-navigation-bar-flex {
-	position: absolute;
-	top: 0;
-	left: 50%;
-	transform: translateX(-50%);
-	width: var(--csss-page-width);
-	height: var(--csss-navigation-bar-height);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--csss-page-width);
+  height: var(--csss-navigation-bar-height);
 }
 
 .csss-navigation-bar-flex-center {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
