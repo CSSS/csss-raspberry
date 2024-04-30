@@ -35,7 +35,7 @@
     "build": "webpack --mode production",
     "prepare": "npm run build",
     "lint": "prettier --write .",
-    "prestart": "npm run build",
+    "prestart": "npm run lint && npm run build",
     "start": "react-scripts start"
   },
   "browserslist": {
