@@ -1,23 +1,12 @@
 import React, { useCallback, useState } from 'react';
-import { OutlineButton } from '../lib/VSCode/buttons/OutlineButton';
-import { PrimaryButton } from '../lib/VSCode/buttons/PrimaryButton';
-import { SecondaryButton } from '../lib/VSCode/buttons/SecondaryButton';
-import { DisabledButton } from '../lib/VSCode/buttons/DisabledButton';
-import { Title } from '../lib/VSCode/text/Title';
-import { Subtitle } from '../lib/VSCode/text/Subtitle';
-import { BodyText } from '../lib/VSCode/text/BodyText';
-import { SubscriptText } from '../lib/VSCode/text/SubscriptText';
-import { SimpleInput } from '../lib/VSCode/inputs/SimpleInput';
-import { Card } from '../lib/VSCode/Card';
-import { ModalAlert } from '../lib/VSCode/alerts/modalAlert';
-import { Footer } from '../lib/VSCode/Footer';
-import { CopyToClipboardButton } from '../lib/VSCode/CopyToClipboardButton';
+import { VSCode } from 'csss-raspberry';
+
 import primaryButtonImage from '../images/buttonsImages/PrimaryButtonImage.png';
 import secondaryButtonImage from '../images/buttonsImages/SecondaryButtonImage.png';
 import disabledButtonImage from '../images/buttonsImages/DisabledButtonImage.png';
 import outlineButtonImage from '../images/buttonsImages/OutlineButtonImage.png';
 
-export const Home = () => {
+export const VSCodeGuide = () => {
   const [showAlert, setShowAlert] = useState(false);
 
   const handleClicked = useCallback(() => {
@@ -36,15 +25,15 @@ export const Home = () => {
   return (
     <>
       {showAlert && (
-        <ModalAlert color="bg-green-400">
-          <Title
+        <VSCode.ModalAlert color="bg-green-400">
+          <VSCode.Title
             text="✔ Application Submitted"
             className=""
             size="text-lg"
             align=""
             color="text-500"
           />
-        </ModalAlert>
+        </VSCode.ModalAlert>
       )}
       <div className="lg:pl-4 pt-24 lg:pt-3 lg:ml-80 lg:pr-8">
         <p className="font-300 text-white text-md ml-4 mt-3">
@@ -62,76 +51,71 @@ export const Home = () => {
           <p className="font-400 text-white text-3xl">→</p>
         </div>
 
-        {/* BUTTONS */}
-        <div className="flex flex-wrap gap-8">
-          <div className="flex flex-col mt-6 w-1/3 gap-4">
-            <Subtitle
-              text="Click this button to test the alert component"
-              className="mt-2 ml-0"
-              color="text-white"
-              size="text-lg"
-              align="mr-auto"
-            />
+        <VSCode.Subtitle
+          text="Click this button to test the alert component"
+          className="mt-2 ml-0"
+          color="text-white"
+          size="text-lg"
+          align="mr-auto"
+        />
 
-            <div className="">
-              <PrimaryButton
-                text="Join our Team ↗"
-                className="ml-0"
-                onClick={handleClicked}
-              />
-              <CopyToClipboardButton
-                className={'ml-4 mt-20 '}
-                textToCopy={
-                  "<PrimaryButton text='Join our Team ↗' className='mt-4 ml-4' onClick={handleClicked} />"
-                }
-              />
-              <img
-                className="w-full rounded-lg mt-4"
-                src={primaryButtonImage}
-              ></img>
-            </div>
+        {/* BUTTONS */}
+        <div className="flex flex-wrap mt-16 gap-4">
+          <div className="flex flex-col w-1/3 gap-4">
+            <VSCode.PrimaryButton
+              text="Join our Team ↗"
+              className="ml-0"
+              onClick={handleClicked}
+            />
+            <VSCode.CopyToClipboardButton
+              className={'ml-4 mt-20 '}
+              textToCopy={
+                "<VSCode.PrimaryButton text='Join our Team ↗' className='mt-4 ml-4' onClick={handleClicked} />"
+              }
+            />
+            <img className="w-full rounded-lg" src={primaryButtonImage}></img>
           </div>
 
-          <div className="flex mt-16 flex-col w-1/3 gap-4">
-            <OutlineButton
+          <div className="flex flex-col w-1/3 gap-4">
+            <VSCode.OutlineButton
               text="Join our Team ↗"
               className="mt-4 ml-0"
               onClick={handleClicked}
             />
-            <CopyToClipboardButton
+            <VSCode.CopyToClipboardButton
               className={'ml-4 mt-20 '}
               textToCopy={
-                "<PrimaryButton text='Join our Team ↗' className='mt-4 ml-4' onClick={handleClicked} />"
+                "<VSCode.PrimaryButton text='Join our Team ↗' className='mt-4 ml-4' onClick={handleClicked} />"
               }
             />
             <img className="w-full rounded-lg" src={outlineButtonImage}></img>
           </div>
 
           <div className="flex flex-col w-1/3 gap-4">
-            <SecondaryButton
+            <VSCode.SecondaryButton
               text="Join our Team ↗"
               className="mt-4 ml-0"
               onClick={handleClicked}
             />
-            <CopyToClipboardButton
+            <VSCode.CopyToClipboardButton
               className={'ml-4 mt-20 '}
               textToCopy={
-                "<PrimaryButton text='Join our Team ↗' className='mt-4 ml-4' onClick={handleClicked} />"
+                "<VSCode.PrimaryButton text='Join our Team ↗' className='mt-4 ml-4' onClick={handleClicked} />"
               }
             />
             <img className="w-full rounded-lg" src={secondaryButtonImage}></img>
           </div>
 
           <div className="flex flex-col w-1/3 gap-4">
-            <DisabledButton
+            <VSCode.DisabledButton
               text="Join our Team ↗"
               className="mt-4 ml-0"
               onClick={handleClicked}
             />
-            <CopyToClipboardButton
+            <VSCode.CopyToClipboardButton
               className={'ml-4 mt-20 '}
               textToCopy={
-                "<PrimaryButton text='Join our Team ↗' className='mt-4 ml-4' onClick={handleClicked} />"
+                "<VSCode.PrimaryButton text='Join our Team ↗' className='mt-4 ml-4' onClick={handleClicked} />"
               }
             />
             <img className="w-full rounded-lg" src={disabledButtonImage}></img>
@@ -140,23 +124,23 @@ export const Home = () => {
 
         {/* TEXT */}
         <div>
-          <Title
-            text="Title Text"
+          <VSCode.Title
+            text="VSCode.Title Text"
             className="mt-4 ml-4"
             color="text-100"
             size="text-4xl"
             align="mr-auto"
           />
 
-          <Subtitle
-            text="Subtitle Text"
+          <VSCode.Subtitle
+            text="VSCode.Subtitle Text"
             className="mt-2 ml-4"
             color="text-white"
             size="text-3xl"
             align="mr-auto"
           />
 
-          <BodyText
+          <VSCode.BodyText
             text="Body Text"
             className="mt-2 ml-4"
             color="text-white"
@@ -164,7 +148,7 @@ export const Home = () => {
             align="mr-auto"
           />
 
-          <SubscriptText
+          <VSCode.SubscriptText
             text="Subscript text"
             className="mt-2 ml-4"
             color="text-white"
@@ -174,7 +158,7 @@ export const Home = () => {
         </div>
 
         <div className="flex flex-col">
-          <SimpleInput
+          <VSCode.SimpleInput
             className="mt-2 ml-4"
             type="text"
             placeholder="Name"
@@ -182,7 +166,7 @@ export const Home = () => {
             width="lg:w-1/3 w-10/12"
           />
 
-          <SimpleInput
+          <VSCode.SimpleInput
             className="mt-2 ml-4"
             type="email"
             placeholder="Email"
@@ -190,7 +174,7 @@ export const Home = () => {
             width="lg:w-1/3 w-10/12"
           />
 
-          <SimpleInput
+          <VSCode.SimpleInput
             className="mt-2 ml-4"
             type="password"
             placeholder="Password"
@@ -198,7 +182,7 @@ export const Home = () => {
             width="lg:w-1/3 w-10/12"
           />
 
-          <SimpleInput
+          <VSCode.SimpleInput
             className="mt-2 ml-4"
             type="number"
             placeholder="Years of Study"
@@ -206,7 +190,7 @@ export const Home = () => {
             width="lg:w-1/3 w-10/12"
           />
 
-          <SimpleInput
+          <VSCode.SimpleInput
             className="mt-2 ml-4"
             type="date"
             title="Date"
@@ -215,140 +199,141 @@ export const Home = () => {
         </div>
 
         <div className="ml-4 mr-4 mt-8 flex flex-wrap gap-5">
-          <Card className="" width="lg:w-1/3">
-            <Title
-              text="Card Title"
+          <VSCode.Card className="" width="lg:w-1/3">
+            <VSCode.Title
+              text="VSCode.Card VSCode.Title"
               className=""
               size="text-3xl"
               align=""
               color="text-100"
             />
-            <Subtitle
-              text="Card Subtitle"
+
+            <VSCode.Subtitle
+              text="VSCode.Card VSCode.Subtitle"
               className="ml-1"
               color="text-white"
               size="text-md"
               align=""
             />
 
-            <BodyText
-              text={`This is an example of a card for the new CSSS website.  This can be used in multiple places by simply calling <Card />.`}
+            <VSCode.BodyText
+              text={`This is an example of a card for the new CSSS website.  This can be used in multiple places by simply calling <VSCode.Card />.`}
               className="ml-1 mt-2 break-words"
               color="text-white"
               size="text-lg"
               align=""
             />
 
-            <SubscriptText
+            <VSCode.SubscriptText
               text="Posted April 29 at 11:07am"
               className="ml-1 mt-2 break-words"
               color="text-white"
               size="text-xs"
               align=""
             />
-          </Card>
+          </VSCode.Card>
 
-          <Card className="" width="lg:w-1/3">
-            <Title
-              text="Card Title"
+          <VSCode.Card className="" width="lg:w-1/3">
+            <VSCode.Title
+              text="VSCode.Card VSCode.Title"
               className=""
               size="text-3xl"
               align=""
               color="text-100"
             />
-            <Subtitle
-              text="Card Subtitle"
+            <VSCode.Subtitle
+              text="VSCode.Card VSCode.Subtitle"
               className="ml-1"
               color="text-white"
               size="text-md"
               align=""
             />
 
-            <BodyText
-              text={`This is an example of a card for the new CSSS website.  This can be used in multiple places by simply calling <Card />.`}
+            <VSCode.BodyText
+              text={`This is an example of a card for the new CSSS website.  This can be used in multiple places by simply calling <VSCode.Card />.`}
               className="ml-1 mt-2 break-words"
               color="text-white"
               size="text-lg"
               align=""
             />
 
-            <SubscriptText
+            <VSCode.SubscriptText
               text="Posted April 29 at 11:07am"
               className="ml-1 mt-2 break-words"
               color="text-white"
               size="text-xs"
               align=""
             />
-          </Card>
+          </VSCode.Card>
 
-          <Card className="" width="lg:w-1/3">
-            <Title
-              text="Card Title"
+          <VSCode.Card className="" width="lg:w-1/3">
+            <VSCode.Title
+              text="VSCode.Card VSCode.Title"
               className=""
               size="text-3xl"
               align=""
               color="text-100"
             />
-            <Subtitle
-              text="Card Subtitle"
+            <VSCode.Subtitle
+              text="VSCode.Card VSCode.Subtitle"
               className="ml-1"
               color="text-white"
               size="text-md"
               align=""
             />
 
-            <BodyText
-              text={`This is an example of a card for the new CSSS website.  This can be used in multiple places by simply calling <Card />.`}
+            <VSCode.BodyText
+              text={`This is an example of a card for the new CSSS website.  This can be used in multiple places by simply calling <VSCode.Card />.`}
               className="ml-1 mt-2 break-words"
               color="text-white"
               size="text-lg"
               align=""
             />
 
-            <SubscriptText
+            <VSCode.SubscriptText
               text="Posted April 29 at 11:07am"
               className="ml-1 mt-2 break-words"
               color="text-white"
               size="text-xs"
               align=""
             />
-          </Card>
+          </VSCode.Card>
 
-          <Card className="" width="lg:w-1/3">
-            <Title
-              text="Card Title"
+          <VSCode.Card className="" width="lg:w-1/3">
+            <VSCode.Title
+              text="VSCode.Card VSCode.Title"
               className=""
               size="text-3xl"
               align=""
               color="text-100"
             />
-            <Subtitle
-              text="Card Subtitle"
+            <VSCode.Subtitle
+              text="VSCode.Card VSCode.Subtitle"
               className="ml-1"
               color="text-white"
               size="text-md"
               align=""
             />
 
-            <BodyText
-              text={`This is an example of a card for the new CSSS website.  This can be used in multiple places by simply calling <Card />.`}
+            <VSCode.BodyText
+              text={`This is an example of a card for the new CSSS website.  This can be used in multiple places by simply calling <VSCode.Card />.`}
               className="ml-1 mt-2 break-words"
               color="text-white"
               size="text-lg"
               align=""
             />
 
-            <SubscriptText
+            <VSCode.SubscriptText
               text="Posted April 29 at 11:07am"
               className="ml-1 mt-2 break-words"
               color="text-white"
               size="text-xs"
               align=""
             />
-          </Card>
+          </VSCode.Card>
         </div>
       </div>
-      <Footer />
+      <VSCode.Footer />
     </>
   );
 };
