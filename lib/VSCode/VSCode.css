@@ -1,0 +1,232 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: main;
+  src: url(./fonts/Fellix-Regular.woff2);
+}
+@font-face {
+  font-family: main2;
+  src: url(./fonts/Fellix-Medium.woff2);
+}
+@font-face {
+  font-family: main3;
+  src: url(./fonts/Fellix-Bold.woff2);
+}
+@font-face {
+  font-family: main4;
+  src: url(./fonts/Fellix-SemiBold.woff2);
+}
+@font-face {
+  font-family: main5;
+  src: url(./fonts/Fellix-Light.woff2);
+}
+
+@font-face {
+  font-family: icons;
+  src: url(./fonts/Social\ Media\ Circled.ttf);
+}
+
+html {
+  background-color: #24292e;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  scrollbar-width: none;
+}
+
+.example::-webkit-scrollbar {
+  display: none;
+}
+
+.example {
+  -ms-overflow-style: none;
+  scrollbar-width: 1px;
+}
+
+.font-100 {
+  font-family: main5;
+}
+
+.font-200 {
+  font-family: main;
+}
+
+.font-300 {
+  font-family: main2;
+}
+
+.font-400 {
+  font-family: main4;
+}
+
+.font-500 {
+  font-family: main3;
+}
+
+.background-100 {
+  background-color: #69c3ff;
+}
+
+.background-200 {
+  background-color: #3dec85;
+}
+
+.background-300 {
+  background-color: #667082;
+}
+
+.background-400 {
+  background-color: #191f23;
+}
+
+.background-500 {
+  background-color: #171f2c;
+}
+
+.background-600 {
+  background-color: #11161f;
+}
+
+.background-700 {
+  background-color: #24292f;
+}
+
+.text-100 {
+  color: #69c3ff;
+}
+
+.text-200 {
+  color: #3dec85;
+}
+
+.text-300 {
+  color: #667082;
+}
+
+.text-400 {
+  color: #1f2428;
+}
+
+.text-500 {
+  color: #171f2c;
+}
+
+.text-600 {
+  color: #11161f;
+}
+
+.border-100 {
+  border: #69c3ff 1.5px solid;
+}
+
+.border-200 {
+  border: #3dec85 1.5px solid;
+}
+
+.border-300 {
+  border: #667082 2px solid;
+}
+
+.border-300-200 {
+  border: #667082 1.5px solid;
+}
+
+.border-400 {
+  border: #191f23 2px solid;
+}
+
+.border-500 {
+  border: #171f2c 2px solid;
+}
+
+.border-600 {
+  border: #11161f 1.5px solid;
+}
+
+.navTab {
+  background-color: #191f23;
+}
+
+.navTab:hover {
+  background-color: rgb(36, 41, 46, 0.7);
+}
+
+.buttonPrimary {
+  transition: 0.35s ease-in-out;
+}
+
+.buttonPrimary:hover {
+  background-color: transparent;
+  color: #69c3ff;
+  border: 1.5px solid #69c3ff;
+}
+
+.buttonSecondary {
+  transition: 0.35s ease-in-out;
+}
+
+.buttonSecondary:hover {
+  background-color: #3dec85;
+  color: #171f2c;
+  border: 2px solid #3dec85;
+}
+
+.buttonPrimaryOutline {
+  transition: 0.35s ease-in-out;
+}
+
+.buttonPrimaryOutline:hover {
+  background-color: #69c3ff;
+  color: #1f2428;
+  border: 1.5px solid #69c3ff;
+}
+
+.buttonSecondaryOutline {
+  transition: 0.35s ease-in-out;
+}
+
+.buttonSecondaryOutline:hover {
+  background-color: #667082;
+  color: white;
+  border: 2px solid #667082;
+}
+
+.inputStyle {
+  transition: 0.3s ease-in-out;
+  border-radius: 4px;
+}
+
+.inputStyle:focus {
+  border-color: #69c3ff;
+}
+
+.alertClass {
+  right: 20px;
+  top: 20px;
+}
+
+@keyframes fadeUp {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.fadeUpAnimation {
+  animation: fadeUp 0.3s ease-in-out;
+}
