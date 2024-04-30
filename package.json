@@ -6,7 +6,8 @@
   "author": "SFU Computing Science Student Society <csss@sfu.ca> (https://sfucsss.org)",
   "private": true,
   "files": [
-    "lib"
+    "lib",
+    ".babelrc"
   ],
   "main": "dist/index.js",
   "dependencies": {
