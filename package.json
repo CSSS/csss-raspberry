@@ -34,6 +34,10 @@
     "prestart": "npm run lint && npm run build",
     "start": "react-scripts start"
   },
+  "engines": {
+    "node": "^18",
+    "npm": "^9"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
