@@ -25,6 +25,7 @@
     "csss-raspberry": "./dist",
     "prettier": "^3.2.5",
     "react-dom": "^18.3.1",
+    "react-router-dom": "^6.23.1",
     "react-scripts": "^5.0.1"
   },
   "scripts": {
