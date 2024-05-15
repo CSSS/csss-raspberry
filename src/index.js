@@ -11,7 +11,7 @@ const router = createHashRouter([
     path: '/',
     element: (
       <>
-        <VSCode.Navbar />
+        <VSCode.NavBar />
         <VSCodeGuide />
       </>
     )
@@ -20,7 +20,7 @@ const router = createHashRouter([
     path: '/projects',
     element: (
       <>
-        <VSCode.Navbar />
+        <VSCode.NavBar />
         <p>projects</p>
       </>
     )
@@ -29,7 +29,7 @@ const router = createHashRouter([
     path: '/about',
     element: (
       <>
-        <VSCode.Navbar />
+        <VSCode.NavBar />
         <p>about</p>
       </>
     )
@@ -38,7 +38,7 @@ const router = createHashRouter([
     path: '/officers',
     element: (
       <>
-        <VSCode.Navbar />
+        <VSCode.NavBar />
         <p>officers</p>
       </>
     )
@@ -47,7 +47,7 @@ const router = createHashRouter([
     path: '/officers/past',
     element: (
       <>
-        <VSCode.Navbar />
+        <VSCode.NavBar />
         <p>officers - past</p>
       </>
     )
@@ -56,7 +56,7 @@ const router = createHashRouter([
     path: '/documents/:document',
     element: (
       <>
-        <VSCode.Navbar />
+        <VSCode.NavBar />
         <p>documents - something</p>
       </>
     )
@@ -65,7 +65,7 @@ const router = createHashRouter([
     path: '/events/:event',
     element: (
       <>
-        <VSCode.Navbar />
+        <VSCode.NavBar />
         <p>events - something</p>
       </>
     )
@@ -74,7 +74,7 @@ const router = createHashRouter([
     path: '/more/:something',
     element: (
       <>
-        <VSCode.Navbar />
+        <VSCode.NavBar />
         <p>more - something</p>
       </>
     )
