@@ -3,12 +3,10 @@
 
 /* CSS variables (these can be overwritten by importing your own stylesheet) */
 :root {
-  --csss-font-family-sans-serif: 'Inter';
-  /* general */
-  /*
   --csss-max-page-width: 1024px;
   --csss-page-width: min(var(--csss-max-page-width), 100vw - 32px);
   --csss-page-margin: calc((100vw - var(--csss-page-width)) / 2);
+  --csss-font-family-sans-serif: 'Inter';
   --csss-font-family-monospace: 'IBM Plex Mono';
   --csss-transition-time: 0.1s;
   --csss-shadow-color: #00000040;
@@ -18,7 +16,6 @@
   --csss-background-color-alt: #f0f0f0;
   --csss-color: #080808;
   --csss-color-alt: #808088;
-
   --csss-button-color: var(--csss-color);
   --csss-button-color-disabled: var(--csss-color-alt);
   --csss-button-idle-color: #e0e0e0;
@@ -37,11 +34,8 @@
   --csss-button-primary-border-color: #2030e0;
   --csss-button-primary-hover-color: #6080ff;
   --csss-button-primary-active-color: #2848f0;
-
   --csss-icon-color: var(--csss-color);
   --csss-icon-stroke-width: 2px;
-
   --csss-navigation-bar-height: 64px;
   --csss-navigation-sidebar-padding: 8px;
-  */
 }
