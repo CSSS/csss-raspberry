@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Icon, Grid, VSCode, helpers } from 'csss-raspberry';
+import { Icon, Flex, Grid, VSCode, helpers } from 'csss-raspberry';
 
 const isMobileDeviceQuery = '(max-width: 768px)';
 
@@ -89,12 +89,15 @@ export const Page = ({ children }) => {
       }}
     >
       {navBar}
-      <Grid.Item
+      <Flex.Container
         area="content"
-        className="overflow-y-scroll bg-slate-800 p-8 text-white"
+        flow="column nowrap"
+        className="overflow-y-scroll bg-slate-800 text-white"
+        style={{ minHeight: '100vh' }}
       >
-        {children}
-      </Grid.Item>
+        <div className="p-8 grow">{children}</div>
+        <VSCode.Footer className="flex-none" />
+      </Flex.Container>
     </Grid.Container>
   );
 };
