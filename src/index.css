@@ -1,3 +1,8 @@
+:root {
+  --csss-icon-color: white;
+  --csss-icon-stroke-width: 2px;
+}
+
 .app {
   background-color: #24292e;
 }

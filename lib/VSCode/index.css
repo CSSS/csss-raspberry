@@ -113,6 +113,10 @@ input {
   border: #667082 2px solid;
 }
 
+.border-r-300 {
+  border-right: #667082a0 1px solid;
+}
+
 .border-300-200 {
   border: #667082 1.5px solid;
 }

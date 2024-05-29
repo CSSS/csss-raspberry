@@ -1,82 +1,49 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { createHashRouter, RouterProvider } from 'react-router-dom';
-import { VSCode } from 'csss-raspberry';
 
+import { Page } from './components';
 import './index.css';
-import { VSCodeGuide } from './pages';
 
 const router = createHashRouter([
   {
     path: '/',
     element: (
-      <>
-        <VSCode.NavBar />
-        <VSCodeGuide />
-      </>
+      <Page>
+        <p>Main Page</p>
+      </Page>
     )
   },
   {
-    path: '/projects',
+    path: '/react',
     element: (
-      <>
-        <VSCode.NavBar />
-        <p>projects</p>
-      </>
+      <Page>
+        <p>Information about React</p>
+      </Page>
     )
   },
   {
-    path: '/about',
+    path: '/flex',
     element: (
-      <>
-        <VSCode.NavBar />
-        <p>about</p>
-      </>
+      <Page>
+        <p>Information about CSS Flex Boxes</p>
+      </Page>
     )
   },
   {
-    path: '/officers',
+    path: '/grid',
     element: (
-      <>
-        <VSCode.NavBar />
-        <p>officers</p>
-      </>
+      <Page>
+        <p>Information about CSS Grid Layout</p>
+      </Page>
     )
   },
   {
-    path: '/officers/past',
+    path: '/vscode',
     element: (
-      <>
-        <VSCode.NavBar />
-        <p>officers - past</p>
-      </>
-    )
-  },
-  {
-    path: '/documents/:document',
-    element: (
-      <>
-        <VSCode.NavBar />
-        <p>documents - something</p>
-      </>
-    )
-  },
-  {
-    path: '/events/:event',
-    element: (
-      <>
-        <VSCode.NavBar />
-        <p>events - something</p>
-      </>
-    )
-  },
-  {
-    path: '/more/:something',
-    element: (
-      <>
-        <VSCode.NavBar />
-        <p>more - something</p>
-      </>
+      <Page>
+        <p>Information about the VSCode Components</p>
+      </Page>
     )
   }
 ]);
