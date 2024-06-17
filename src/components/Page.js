@@ -9,6 +9,12 @@ export const Page = ({ children }) => {
     helpers.checkMediaQuery(isMobileDeviceQuery)
   );
 
+  const [user, setUser] = useState(null);
+
+  const userLogin = () => {
+    helpers.casLogin('http://localhost:3000');
+  };
+
   // on page load
   useEffect(() => {
     // NOTE: this will only add an event listener ONCE, regardless of how
@@ -16,6 +22,14 @@ export const Page = ({ children }) => {
     // in lib/helpers.js).
     helpers.watchMediaQuery(isMobileDeviceQuery, setIsMobileDevice);
     // isMobileDevice will update when the media query changes
+
+    const casGetUser = async () => {
+      const _user = await helpers.casGetUser();
+
+      setUser(_user);
+    };
+
+    casGetUser(); // async
   }, []);
 
   const apps = (
@@ -96,7 +110,8 @@ export const Page = ({ children }) => {
         style={{ minHeight: '100vh' }}
       >
         <div className="p-8 grow">{children}</div>
-        <VSCode.Footer className="flex-none" />
+        <p>{JSON.stringify(user)}</p>
+        <button onClick={userLogin}>Login</button>
       </Flex.Container>
     </Grid.Container>
   );
