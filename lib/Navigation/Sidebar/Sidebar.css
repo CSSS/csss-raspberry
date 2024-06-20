@@ -1,6 +1,0 @@
-.csss-navigation-sidebar {
-  border-right: 1px solid var(--csss-border-color-alt);
-  padding: var(--csss-navigation-sidebar-padding);
-  background-color: var(--csss-background-color-alt);
-  color: var(--csss-color);
-}
