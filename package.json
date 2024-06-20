@@ -29,10 +29,9 @@
     "react-scripts": "^5.0.1"
   },
   "scripts": {
-    "build": "NODE_ENV=production babel lib --out-dir dist --copy-files",
-    "prepare": "npm run build",
+    "prepare": "NODE_ENV=production babel lib --out-dir dist --copy-files",
     "lint": "prettier --write .",
-    "prestart": "npm run lint && npm run build",
+    "prestart": "npm run lint && npm run prepare",
     "start": "react-scripts start"
   },
   "engines": {
