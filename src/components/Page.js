@@ -8,11 +8,11 @@ export const Page = ({ children }) => {
   const [isMobileDevice, setIsMobileDevice] = useState(
     helpers.checkMediaQuery(isMobileDeviceQuery)
   );
-
   const [user, setUser] = useState(null);
 
   const userLogin = () => {
-    helpers.casLogin('http://localhost:3000');
+    // when the user logs in, they should return to the current page
+    helpers.casLogin(window.location.href);
   };
 
   // on page load
@@ -23,13 +23,11 @@ export const Page = ({ children }) => {
     helpers.watchMediaQuery(isMobileDeviceQuery, setIsMobileDevice);
     // isMobileDevice will update when the media query changes
 
-    const casGetUser = async () => {
-      const _user = await helpers.casGetUser();
-
-      setUser(_user);
+    const getUser = async () => {
+      setUser(await helpers.casGetUser());
     };
 
-    casGetUser(); // async
+    getUser(); // async
   }, []);
 
   const apps = (
@@ -40,13 +38,20 @@ export const Page = ({ children }) => {
           '--csss-icon-color': '#64748b' // slate-500
         }}
       />
-      <Icon.Profile // profile button, could open a modal menu on click
-        style={{
-          marginTop: 'auto', // stick to end of flexbox
-          '--csss-icon-color': '#64748b', // slate-500
-          '--csss-icon-stroke-width': '2px'
-        }}
-      />
+      {user === null ? (
+        <div style={{ marginTop: 'auto' }} onClick={userLogin}>
+          <Icon.Profile // profile button, could open a modal menu on click
+            style={{
+              width: '100%',
+              height: '100%',
+              '--csss-icon-color': '#64748b', // slate-500
+              '--csss-icon-stroke-width': '2px'
+            }}
+          />
+        </div>
+      ) : (
+        <p style={{ marginTop: 'auto' }}>{JSON.stringify(user)}</p>
+      )}
     </>
   );
 
@@ -110,8 +115,6 @@ export const Page = ({ children }) => {
         style={{ minHeight: '100vh' }}
       >
         <div className="p-8 grow">{children}</div>
-        <p>{JSON.stringify(user)}</p>
-        <button onClick={userLogin}>Login</button>
       </Flex.Container>
     </Grid.Container>
   );
