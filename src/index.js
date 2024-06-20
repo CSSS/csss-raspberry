@@ -45,6 +45,14 @@ const router = createHashRouter([
         <p>Information about the VSCode Components</p>
       </Page>
     )
+  },
+  {
+    path: '*',
+    element: (
+      <Page>
+        <p className="text-slate-400">Error 404: Not found.</p>
+      </Page>
+    )
   }
 ]);
 

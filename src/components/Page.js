@@ -38,29 +38,21 @@ export const Page = ({ children }) => {
           '--csss-icon-color': '#64748b' // slate-500
         }}
       />
-      {user === null ? (
-        <div style={{ marginTop: 'auto' }} onClick={userLogin}>
-          <Icon.Profile // profile button, could open a modal menu on click
-            style={{
-              width: '100%',
-              height: '100%',
-              '--csss-icon-color': '#64748b', // slate-500
-              '--csss-icon-stroke-width': '2px'
-            }}
-          />
-        </div>
-      ) : (
-        <p style={{ marginTop: 'auto' }}>{JSON.stringify(user)}</p>
-      )}
+      <a style={{ marginTop: 'auto' }} href="#profile">
+        <Icon.Profile // profile button, could open a modal menu on click
+          style={{
+            width: '100%',
+            height: '100%',
+            '--csss-icon-color': '#64748b', // slate-500
+            '--csss-icon-stroke-width': '1px'
+          }}
+        />
+      </a>
     </>
   );
 
-  const navBar = (
-    <VSCode.NavBar
-      apps={apps}
-      isMobileDevice={isMobileDevice}
-      title="csss-raspberry"
-    >
+  const files = (
+    <>
       <VSCode.NavItem text="README.md" to="/" />
       <VSCode.NavFolder text="resources">
         <VSCode.NavItem isInFolder={true} text="React.md" to="/react" />
@@ -90,32 +82,17 @@ export const Page = ({ children }) => {
           href="https://github.com/CSSS/csss-site-backend"
         />
       </VSCode.NavFolder>
-    </VSCode.NavBar>
+    </>
   );
 
   return (
-    <Grid.Container
-      columns={isMobileDevice ? '1fr' : '320px 1fr'}
-      rows={isMobileDevice ? '64px 1fr' : '1fr'}
-      areas={isMobileDevice ? ['navbar', 'content'] : ['navbar content']}
-      style={{
-        display: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100vw',
-        height: '100vh',
-        overflow: 'hidden'
-      }}
+    <VSCode.Page
+      apps={apps}
+      files={files}
+      isMobileDevice={isMobileDevice}
+      title="csss-raspberry"
     >
-      {navBar}
-      <Flex.Container
-        area="content"
-        flow="column nowrap"
-        className="overflow-y-scroll bg-slate-800 text-white"
-        style={{ minHeight: '100vh' }}
-      >
-        <div className="p-8 grow">{children}</div>
-      </Flex.Container>
-    </Grid.Container>
+      {children}
+    </VSCode.Page>
   );
 };
