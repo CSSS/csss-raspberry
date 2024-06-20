@@ -6,6 +6,7 @@
   "author": "SFU Computing Science Student Society <csss@sfu.ca> (https://sfucsss.org)",
   "private": true,
   "files": [
+    "dist",
     "lib",
     ".babelrc"
   ],
@@ -29,7 +30,7 @@
     "react-scripts": "^5.0.1"
   },
   "scripts": {
-    "prepare": "NODE_ENV=production babel lib --out-dir dist --copy-files",
+    "prepare": "NODE_ENV=production babel ./lib --out-dir ./dist --copy-files",
     "lint": "prettier --write .",
     "prestart": "npm run lint && npm run prepare",
     "start": "react-scripts start"
