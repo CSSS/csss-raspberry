@@ -1,6 +1,6 @@
 {
   "name": "csss-raspberry",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "A React component library.",
   "license": "MIT",
   "author": "SFU Computing Science Student Society <csss@sfu.ca> (https://sfucsss.org)",
@@ -22,11 +22,11 @@
     "tailwindcss": "^3.4.4"
   },
   "peerDependencies": {
-    "csss-raspberry": "./dist",
     "react": "^18.2.0",
     "react-router-dom": "^6.23.1"
   },
   "devDependencies": {
+    "csss-raspberry": "./dist",
     "prettier": "^3.2.5",
     "react-dom": "^18.3.1",
     "react-scripts": "^5.0.1"
