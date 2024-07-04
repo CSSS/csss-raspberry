@@ -1,13 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Icon, Flex, Grid, VSCode, helpers } from 'csss-raspberry';
 
-const isMobileDeviceQuery = '(max-width: 768px)';
-
 // example usage of the VSCode.NavBar component, passing in children
 export const Page = ({ children }) => {
-  const [isMobileDevice, setIsMobileDevice] = useState(
-    helpers.checkMediaQuery(isMobileDeviceQuery)
-  );
   const [user, setUser] = useState(null);
 
   const userLogin = () => {
@@ -17,12 +12,6 @@ export const Page = ({ children }) => {
 
   // on page load
   useEffect(() => {
-    // NOTE: this will only add an event listener ONCE, regardless of how
-    // many times it is called (see implementation of helpers.watchMediaQuery
-    // in lib/helpers.js).
-    helpers.watchMediaQuery(isMobileDeviceQuery, setIsMobileDevice);
-    // isMobileDevice will update when the media query changes
-
     const getUser = async () => {
       setUser(await helpers.casGetUser());
     };
@@ -32,7 +21,7 @@ export const Page = ({ children }) => {
 
   const apps = (
     <>
-      <Icon.CSSS />
+      <Icon.CSSS style={{ '--csss-icon-color': 'white' }} />
       <Icon.Folder // a fake app; just a folder icon
         style={{
           '--csss-icon-color': '#64748b' // slate-500
@@ -86,12 +75,7 @@ export const Page = ({ children }) => {
   );
 
   return (
-    <VSCode.Page
-      apps={apps}
-      files={files}
-      isMobileDevice={isMobileDevice}
-      title="csss-raspberry"
-    >
+    <VSCode.Page apps={apps} files={files} title="csss-raspberry">
       {children}
     </VSCode.Page>
   );
