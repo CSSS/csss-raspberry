@@ -17,20 +17,24 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.23.5",
-    "@babel/preset-react": "^7.23.3"
+    "@babel/preset-react": "^7.23.3",
+    "html2canvas": "^1.4.1",
+    "tailwindcss": "^3.4.4"
   },
   "peerDependencies": {
+    "csss-raspberry": "./dist",
     "react": "^18.2.0",
     "react-router-dom": "^6.23.1"
   },
   "devDependencies": {
-    "csss-raspberry": "./dist",
     "prettier": "^3.2.5",
     "react-dom": "^18.3.1",
     "react-scripts": "^5.0.1"
   },
   "scripts": {
-    "prepare": "NODE_ENV=production babel ./lib --out-dir ./dist --copy-files",
+    "tailwind": "tailwindcss -i ./tailwind.css -o ./lib/tailwind.css",
+    "babel": "NODE_ENV=production babel ./lib --out-dir ./dist --copy-files",
+    "prepare": "npm run tailwind && npm run babel",
     "lint": "prettier --write .",
     "prestart": "npm run lint && npm run prepare",
     "start": "react-scripts start"
